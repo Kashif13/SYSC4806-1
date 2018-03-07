@@ -27,7 +27,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | (Sunday) 4th March, 2018 |
 | End Date | - |
 
-| Story | [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841305) |
+| Story | [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950431) |
 | ------ | ------ |
 | Story Number | 2 |
 | Size Estimate | - |
@@ -37,7 +37,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | - |
 | End Date | - |
 
-| Story | [As a user, I should be able to list all learning outcomes, so that I can see all that are required ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840972) |
+| Story | [As a user, I should be able to list all learning outcomes, so that I can see all that are required ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950442) |
 | ------ | ------ |
 | Story Number | 3 |
 | Size Estimate | - |
