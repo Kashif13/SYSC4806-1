@@ -40,11 +40,11 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Story | [As a user, I should be able to list all learning outcomes, so that I can see all that are required ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950442) |
 | ------ | ------ |
 | Story Number | 3 |
-| Size Estimate | - |
-| Details | - |
-|Acceptance Criteria | - |
-| Assigned to | - |
-| Start Date | - |
+| Size Estimate | M |
+| Details | Create learning outcome domain page to be accessed and lists all learning outcomes |
+|Acceptance Criteria | Have controller, domain page, tests set up completed  |
+| Assigned to | Muhammad Kashif Siddiqui |
+| Start Date | (Tuesday) 6th March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to View all the courses, so that I can navigate to the learning outcomes for a specific one ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841273) |
