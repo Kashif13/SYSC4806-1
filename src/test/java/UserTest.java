@@ -1,4 +1,4 @@
-import com.User;
+import app.User;
 import org.junit.Before;
 import org.junit.Test;
 

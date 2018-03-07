@@ -1,5 +1,4 @@
-import com.LearningOutcome;
-import com.User;
+import app.LearningOutcome;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,11 +1,11 @@
-package controller;
+package app;
 
-import com.LearningOutcome;
+import app.LearningOutcome;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import repository.LearningOutcomeRepository;
+import app.LearningOutcomeRepository;
 
 @Controller
 public class LearningOutcomeController {
@@ -19,7 +19,4 @@ public class LearningOutcomeController {
         model.addAttribute("learningOutcome", learningOutcome);
         return "learningOutcome";
     }
-
-
-
 }

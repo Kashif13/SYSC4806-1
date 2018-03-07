@@ -1,4 +1,4 @@
-package com;
+package app;
 
 
 import javax.persistence.*;
@@ -12,6 +12,10 @@ public class LearningOutcome {
     private String name;
     private String description;
 
+    /**
+     * Default constructor
+     */
+    public LearningOutcome() {}
     /**
      * Constructor for learning outcomes
      * @param name - Name for learning outcomes, to easily identify
