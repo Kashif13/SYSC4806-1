@@ -1,10 +1,8 @@
-package repository;
+package app;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import com.Role;
+import app.Role;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.stereotype.Repository;
 
 @RepositoryRestResource(collectionResourceRel="roles", path ="roles")
 public interface RoleRepository extends CrudRepository<Role, Long> {
