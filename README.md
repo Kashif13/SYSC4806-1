@@ -110,7 +110,8 @@ Represent the structure of a Department, and be able to track, edit and update t
 # Sprint 1
 ---
 ## Goal: Display list of Learning Outcomes
-Aim was to have the initial setup of the project completed; which includedproper version control repo, integrated with Travis CI, and the app should be up and running in production on Heroku. Along with having the first feature of having the ability to work with the backend and display information to the user after logging in, which includes the list of programs and learning outcomes for the time being.
+Aim was to have the initial setup of the project completed; which included proper version control repo, integrated with Travis CI, and the app should be up and running in production on Heroku. Along with having the first feature of having the ability to work with the backend and display information to the user after logging in, which includes the list of programs and learning outcomes for the time being. Already populated with a very small list of learning outcomes.
+
 ---
 ## Setup instructions
 
