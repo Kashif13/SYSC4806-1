@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class UserTest {
 
     User user1;
-    String testEmail = "test@test.com";
+    String testEmail = "test";
     String testName = "Donald";
 
     @Before
@@ -14,9 +14,9 @@ public class UserTest {
         user1 = new User();
     }
     @Test
-    public void testSetEmail() throws Exception {
-        user1.setEmail("test@test.com");
-        assertEquals(user1.getEmail(), testEmail);
+    public void testSetUsername() throws Exception {
+        user1.setUsername("test");
+        assertEquals(user1.getUsername(), testEmail);
     }
     @Test
     public void testSetName() throws Exception {
