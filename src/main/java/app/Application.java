@@ -21,7 +21,6 @@ public class Application {
     }
 
 
-//TODO: Need to restructure to enable it to catch the right app.repository beans. Essentially have all packages inside the 'app' package.
     @Bean
     public CommandLineRunner demo(LearningOutcomeRepository loRepo) {
         return (args) -> {
