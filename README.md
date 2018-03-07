@@ -17,12 +17,12 @@ Represent the structure of a Department, and be able to track, edit and update t
 > NOTE: Stories are not concrete, and open to re-prioritization and re-sizing based on the chance that the needs and efforts are overlooked
 ---
 
-| Story | [As a user, I should be able to login to the app, so that I can display different  lists of information related to the department ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7842757) |
+| Story | [As a user, I should be able to login to the app, so that I can display different lists of information related to the department ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7842757) |
 | ------ | ------ |
 | Story Number | 1 |
 | Size Estimate | L |
-| Details | - |
-|Acceptance Criteria | - |
+| Details | Have a login page for people to view the department and information about the department. The department will only display the top level for the time being. User should be able to register and view information, a user type would be Admin who can make changes in the future implementation of the program. |
+|Acceptance Criteria | Setup travis, heroku. Add class and entity relations for users and user roles. Have login page (needed for admin vs user), ability to register. View top level of department after logging in |
 | Assigned to | Sheikh Faisal Anwar |
 | Start Date | (Sunday) 4th March, 2018 |
 | End Date | - |
@@ -111,3 +111,8 @@ Represent the structure of a Department, and be able to track, edit and update t
 ---
 ## Goal: Display list of Learning Outcomes
 Aim was to have the initial setup of the project completed; which includedproper version control repo, integrated with Travis CI, and the app should be up and running in production on Heroku. Along with having the first feature of having the ability to work with the backend and display information to the user after logging in, which includes the list of programs and learning outcomes for the time being.
+---
+## Setup instructions
+
+TODO: setup instructions
+
