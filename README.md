@@ -119,3 +119,16 @@ Aim was to have the initial setup of the project completed; which included prope
 2. Import pom.xml
 3. Run Application as main
 
+---
+## Sprint 2
+---
+
+## Plans:
+Have integration tests in place, complete Program domain model and establish relationships between courses, programs, years, categories, and learning outcomes. Hopefully also implement Administrator privileges to edit the list, and have a user only be able to view all the information. The specific lists the user is able to view need to be established as well, after the relationships and the domain models are set up.
+The relationships to establish are:
+  - Multiple programs in the department
+  - Each course has a Set of learning objectives in a given year
+  - Each learning objective belongs to a category
+  - Each course belongs to one or many programs, and a program has many courses in a given year
+  - Course is taught in a given year
+ 
