@@ -16,8 +16,7 @@ public class ProgramTest {
     }
     @Test
     public void testEmptyDescriptionIfNotProvided() throws Exception {
-        assertEquals("", p2.getName());
-        p2.setName("NameTest2");
+        assertEquals("", p2.getDescription());
     }
     @Test
     public void testSetName() throws Exception {
