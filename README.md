@@ -130,5 +130,6 @@ The relationships to establish are:
 
 1. git clone https://github.com/sheikhfaisalanwar/SYSC4806.git
 2. Import pom.xml
-3. Run Application as main
+3. Run Application.java as main
+4. On a browser navigate to localhost:8080 to view the app
  
