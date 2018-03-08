@@ -115,5 +115,7 @@ Aim was to have the initial setup of the project completed; which included prope
 ---
 ## Setup instructions
 
-TODO: setup instructions
+1. git clone https://github.com/sheikhfaisalanwar/SYSC4806.git
+2. Import pom.xml
+3. Run Application as main
 
