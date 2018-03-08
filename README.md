@@ -123,6 +123,7 @@ The relationships to establish are:
   - Each learning objective belongs to a category
   - Each course belongs to one or many programs, and a program has many courses in a given year
   - Course is taught in a given year
+
 We will also setup and maintain UML diagrams.
   
   
