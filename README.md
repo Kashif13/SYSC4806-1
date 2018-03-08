@@ -112,6 +112,12 @@ Represent the structure of a Department, and be able to track, edit and update t
 ## Goal: Display list of Learning Outcomes
 Aim was to have the initial setup of the project completed; which included proper version control repo, integrated with Travis CI, and the app should be up and running in production on Heroku. Along with having the first feature of having the ability to work with the backend and display information to the user after logging in, which includes the list of programs and learning outcomes for the time being. Already populated with a very small list of learning outcomes.
 
+**Stories worked on for Sprint 1:**
+Story Number 1 - [As a user, I should be able to login to the app, so that I can display different lists of information related to the department ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7842757)
+Story Number 2 - [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950431)
+Story Number 3 - [As a user, I should be able to list all learning outcomes, so that I can see all that are required ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950442)
+
+
 ---
 # Sprint 2
 
