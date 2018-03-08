@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import app.LearningOutcomeRepository;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class LearningOutcomeController {
@@ -18,5 +19,11 @@ public class LearningOutcomeController {
         LearningOutcome learningOutcome = new LearningOutcome("test", "test");
         model.addAttribute("learningOutcome", learningOutcome);
         return "learningOutcome";
+    }
+
+    @RequestMapping("/listLearningOutcomes")
+    public String listLearningOutcomes(Model model){
+        model.addAttribute("learningOutcomes", learningOutcome.findAll());
+        return "listLearningOutcomes";
     }
 }
