@@ -42,9 +42,9 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Story Number | 4 |
 | Size Estimate | M |
 | Details | - |
-|Acceptance Criteria | - |
+|Acceptance Criteria | Dropdown/List view to choose course from and navigate to learning outcomes based on course |
 | Assigned to | Sheikh Faisal Anwar |
-| Start Date | - |
+| Start Date | 12/03/2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to list all categories, so that I can see them in the page ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841145) |
@@ -52,9 +52,9 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Story Number | 5 |
 | Size Estimate | S |
 | Details | - |
-|Acceptance Criteria | - |
+|Acceptance Criteria | Dropdown/Listview of all categories and filtering based on chosen one  |
 | Assigned to | Sheikh Faisal Anwar |
-| Start Date | - |
+| Start Date | 12/03/2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901) |
