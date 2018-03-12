@@ -135,6 +135,11 @@ We will also setup and maintain UML diagrams.
 
 ## Goal: 
 
+---
+# Sprint 3:
+
+## Plans:
+
   
   
 ---
