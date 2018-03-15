@@ -10,5 +10,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel="programs", path ="programs")
 public interface ProgramRepository extends CrudRepository<Program, Long> {
 
+    List<Program> findAll();
     List<Program> findByName(String name);
 }
