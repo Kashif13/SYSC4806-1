@@ -8,13 +8,13 @@ import app.ProgramRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.Year;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Controller
 public class ProgramController {
+
+    int NUMBER_OF_PREVIOUS_YEARS = 3;
 
     @Autowired
     private ProgramRepository program;
@@ -27,9 +27,10 @@ public class ProgramController {
 
     @GetMapping("/pickProgramAndYear")
     public String pickProgramAndYearForm(Model model){
-        int[] yearsArr = {2015, 2016, 2017, 2018};
         ArrayList years = new ArrayList();
-        for(int year : yearsArr) {
+        int year;
+        for(int i=0; i < NUMBER_OF_PREVIOUS_YEARS; i++) {
+            year = Year.now().getValue()-i;
             years.add(year);
         }
         model.addAttribute("programs", program.findAll());
