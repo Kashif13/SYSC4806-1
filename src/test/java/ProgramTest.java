@@ -23,5 +23,9 @@ public class ProgramTest {
         p2.setName("test");
         assertEquals("test", p2.getName());
     }
+    @Test
+    public void testToString() throws Exception {
+        assertEquals("NameTest: DescTest", p1.toString());
+    }
 
 }
