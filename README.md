@@ -73,8 +73,8 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | M |
 | Details | - |
 |Acceptance Criteria | - |
-| Assigned to | Muhammad Kashif Siddiqui |
-| Start Date | - |
+| Assigned to | Himanish Kaushal |
+| Start Date | 12 March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) |
