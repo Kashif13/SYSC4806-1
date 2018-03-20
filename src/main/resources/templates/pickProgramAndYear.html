@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Programs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Programs</h1>
+    </div>
+
+    <select>
+        <span th:each="program : ${programs}">
+            <option th:value="${program.id}" th:text="${program.name}">
+            </option>
+        </span>
+    </select>
+
+    <select>
+        <span th:each="year : ${years}">
+            <option th:value="${year}" th:text="${year}">
+            </option>
+        </span>
+    </select>
+
+    <br/>
+
+    <!-- <input type="button"  onclick="location.href='/newProgram'" value="Add a new learning outcome" /> -->
+</div>
+</body>
+
+</html>

@@ -22,7 +22,7 @@ public class Application {
 
 
     @Bean
-    public CommandLineRunner demo(LearningOutcomeRepository loRepo) {
+    public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo) {
         return (args) -> {
             // save a couple of learning outcomes
             loRepo.save(new LearningOutcome("Cloud", "knows to deploy a web app to the cloud"));
@@ -30,7 +30,6 @@ public class Application {
             loRepo.save(new LearningOutcome("SaaS", "is able to understand SaaS literature"));
             loRepo.save(new LearningOutcome("DesignPatters", "has knowledge of creational patters"));
             loRepo.save(new LearningOutcome("DesignPatters", "has knowledge of behavioral patters"));
-
 
             // fetch all learning outcomes
             log.info("Learning Outcomes found with findAll():");
@@ -52,6 +51,35 @@ public class Application {
             log.info("--------------------------------------------");
             for (LearningOutcome los : loRepo.findByName("DesignPatters")) {
                 log.info(los.toString());
+            }
+            log.info("");
+
+            // save a few programs with descriptions
+            progRepo.save(new Program("Software Engineering", "Intense program involving the design, " +
+                    "development and maintenance of software and computer systems."));
+            progRepo.save(new Program("Women's Studies", "Not so intense program involving ..."));
+            progRepo.save(new Program("Psychology", ""));
+
+            // fetch all programs
+            log.info("Programs found with findAll():");
+            log.info("-------------------------------");
+            for (Program p : progRepo.findAll()) {
+                log.info(p.toString());
+            }
+            log.info("");
+
+            // fetch an individual laerning outcome by ID
+            Program p1 = progRepo.findOne(1L);
+            log.info("Program found with findOne(1L):");
+            log.info("--------------------------------");
+            log.info(p1.toString());
+            log.info("");
+
+            // fetch programs of name "Software Engineering"
+            log.info("Programs found with findByName('Software Engineering'):");
+            log.info("--------------------------------------------");
+            for (Program progs : progRepo.findByName("Software Engineering")) {
+                log.info(progs.toString());
             }
             log.info("");
         };
