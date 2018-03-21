@@ -90,7 +90,14 @@ public class LearningOutcome {
      */
     @Override
     public String toString(){
-        return "ID: " +this.getId() + ", Name: " +this.name + ", Description: " + this.description;
+        String str = "ID: " +this.getId() + ", Name: " + this.name + ", Description: " + this.description;
+        if (this.program != null) {
+            str += ", Program: " + program.toString();
+        }
+        if (this.category != null) {
+            str += ", Category: " + category.toString();
+        }
+        return str;
     }
 
 }
