@@ -54,6 +54,18 @@ public class LearningOutcome {
         this.program = program;
     }
 
+    /**
+     * Constructor for learning outcomes
+     * @param name - Name for learning outcomes, to easily identify
+     * @param description - Description used to display what the learning outcome is
+     * @param category - category this learning outcome belongs to
+     */
+    public LearningOutcome(String name, String description, Category category) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+    }
+
     /** Getters **/
     public Long getId() {
         return id;
@@ -61,7 +73,7 @@ public class LearningOutcome {
     public String getDescription() { return description; }
     public String getName() { return name; }
     public Program getProgram() { return program; }
-
+    public Category getCategory() { return category; }
 
     /** Setters **/
     public void setId(Long objectiveId) {
@@ -70,7 +82,7 @@ public class LearningOutcome {
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
     public void setProgram(Program program) { this.program = program; }
-
+    public void setCategory(Category category) { this.category = category; }
 
     /**
      * Overridden toString method to ensure only description is displayed

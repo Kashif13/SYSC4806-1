@@ -11,4 +11,5 @@ import java.util.List;
 public interface LearningOutcomeRepository extends CrudRepository<LearningOutcome, Long> {
     List<LearningOutcome> findByName(String name);
     List<LearningOutcome> findByProgram (Program program);
+    List<LearningOutcome> findByCategory (Category category);
 }

@@ -13,17 +13,25 @@
     <div class="page-header">
         <h1>Categories</h1>
     </div>
-    <p>Pick Category to filter Learning Outcomes:
-        <select>
-            <span th:each="category : ${categories}">
-                <option th:value="${category.id}" th:text="${category.name}">
-                </option>
-            </span>
-        </select>
-    </p>
-    <br/>
+    <form th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
+        <table>
+            <tr>
+                <td>Pick Category to filter Learning Outcomes:</td>
+                <td>
+                    <select th:field="*{id}">
+                        <option th:each="cat : ${categories}"
+                                th:value="${cat.id}"
+                                th:utext="${cat.name}"/>
+                    </select>
 
-    <!-- <input type="button"  onclick="location.href='/newProgram'" value="Add a new learning outcome" /> -->
+                </td>
+            </tr>
+
+            <tr>
+                <td><input name="submit" type="submit" /></td>
+            </tr>
+        </table>
+    </form>
 </div>
 </body>
 

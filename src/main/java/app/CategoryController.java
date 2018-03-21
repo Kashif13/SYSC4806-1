@@ -19,6 +19,8 @@ public class CategoryController {
 
     @RequestMapping("/listCategories")
     public String listCategories(Model model){
+        Category category = new Category();
+        model.addAttribute("category", category);
         model.addAttribute("categories", categoryRepo.findAll());
         return "listCategories";
     }
