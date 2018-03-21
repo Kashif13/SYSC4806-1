@@ -13,24 +13,24 @@
     <div class="page-header">
         <h1>Programs</h1>
     </div>
+    <form  id="programForm"  action="#" th:action="@{/displayCourseForProgram}" th:object="${program}" method="post">
 
-    <select>
-        <span th:each="program : ${programs}">
-            <option th:value="${program.id}" th:text="${program.name}">
-            </option>
-        </span>
-    </select>
+        <select>
+            <span th:each="program : ${programs}">
+                <option th:value="${program.id}" th:text="${program.name}">
+                </option>
+            </span>
+        </select>
 
-    <select>
-        <span th:each="year : ${years}">
-            <option th:value="${year}" th:text="${year}">
-            </option>
-        </span>
-    </select>
-
+        <select>
+            <span th:each="year : ${years}">
+                <option th:value="${year}" th:text="${year}">
+                </option>
+            </span>
+        </select>
+        <input id="submit" type="submit" value="Submit"/>
+    </form>
     <br/>
-
-    <!-- <input type="button"  onclick="location.href='/newProgram'" value="Add a new learning outcome" /> -->
 </div>
 </body>
 

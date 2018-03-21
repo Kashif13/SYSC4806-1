@@ -13,6 +13,8 @@ public class Program {
     private Long id;
     private String name;
     private String description;
+    @ManyToMany
+    private List<Course> courses;
 
     @OneToMany(mappedBy = "program", cascade = CascadeType.PERSIST)
     private List<LearningOutcome> learningOutcomes = new ArrayList<LearningOutcome>();
@@ -45,12 +47,12 @@ public class Program {
      * Constructor for program when name, description and learning outcomes provided
      * @param name - Name of the program, e.g. Software Engineering
      * @param description - Description for the program
-     * @param los - List of learning outcomes belonging to this program
+     * @param courses - List of course belonging to this program
      */
-    public Program(String name, String description, List<LearningOutcome> los) {
+    public Program(String name, String description, List<Course> courses) {
         this.name = name;
         this.description = description;
-        this.learningOutcomes = los;
+        this.courses = courses;
     }
 
     /**
@@ -64,6 +66,18 @@ public class Program {
      * @param lo - Learning outcome to be removed
      */
     public void removeLearningOutcome(LearningOutcome lo){ this.learningOutcomes.remove(lo); }
+
+    /**
+     * Function for adding course
+     * @param course - Course to be added
+     */
+    public void addCourse(Course course){ this.courses.add(course); }
+
+    /**
+     * Function for removing a course
+     * @param course - Course to be removed
+     */
+    public void removeCourse(Course course){ this.courses.remove(course); }
 
 
     /** Getters **/
