@@ -16,13 +16,13 @@ function searchAjax() {
     $.ajax({
         type : "POST",
         contentType : "application/json",
-        url : "/learningOutcomes",
+        url : "/displayCourseForProgram",
         data : JSON.stringify(data),
         dataType : 'json',
         timeout : 100000,
         success : function(data) {
             console.log("SUCCESS: ", data);
-            $("#success").append("SUCCESS: Learning Outcome - ", JSON.stringify(data.name), " added   ");
+            $("#success").append("SUCCESS: Filtered - ", JSON.stringify(data.name),);
         },
         error : function(e) {
             console.log("ERROR: ", e);
