@@ -25,7 +25,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Have controller, domain page, tests set up completed. Also be able to add programs for the time being. Will change later when lists viewed are modified and user login completed |
 | Assigned to | Himanish Kaushal |
 | Start Date | (Wednesday) 7th March, 2018 |
-| End Date | - |
+| End Date | 18th March, 2018 |
 
 | Story | [As a user, I should be able to list all learning outcomes, so that I can see all that are required ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950442) |
 | ------ | ------ |
@@ -93,7 +93,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | M |
 | Details | - |
 |Acceptance Criteria | - |
-| Assigned to | Himanish Kaushal |
+| Assigned to |  |
 | Start Date | - |
 | End Date | - |
 
