@@ -25,7 +25,8 @@ public class ProgramTest {
     }
     @Test
     public void testToString() throws Exception {
-        assertEquals("NameTest: DescTest", p1.toString());
+        p1.setId(1L);
+        assertEquals("ID: 1, NameTest: DescTest", p1.toString());
     }
 
 }
