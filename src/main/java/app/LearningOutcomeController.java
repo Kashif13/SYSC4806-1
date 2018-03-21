@@ -4,11 +4,10 @@ import app.LearningOutcome;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import app.LearningOutcomeRepository;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Map;
 
 @Controller
 public class LearningOutcomeController {
@@ -26,6 +25,12 @@ public class LearningOutcomeController {
     @RequestMapping("/listLearningOutcomes")
     public String listLearningOutcomes(Model model){
         model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
+        return "listLearningOutcomes";
+    }
+
+    @RequestMapping("/listLearningOutcomesByCategory")
+    public String listLearningOutcomesByCategory(@ModelAttribute("category") Category category, Model model){
+        model.addAttribute("learningOutcomes", learningOutcomeRepo.findByCategory(category));
         return "listLearningOutcomes";
     }
 
