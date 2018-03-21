@@ -5,7 +5,8 @@
   - Himanish Kaushal
 
 # Project:
-**Learning Outcomes Management System**
+**Learning Outcomes Management System**:
+
 Represent the structure of a Department, and be able to track, edit and update the Learning Outcomes (objectives) of the programs being offered. Learning Outcomes are arranged in Categories and are offered by one or many courses in a given year, where a course belongs to one or many programs. A user can view all the details, but only an Administrator can make changes.
 
 # Product Backlog:
@@ -15,7 +16,6 @@ Represent the structure of a Department, and be able to track, edit and update t
 > Arbitrary size: T-shirt sizes (S, M, L, XL, XXL)
 > Sizing done by Team while backlog grooming during Sprint weekly meetings
 > NOTE: Stories are not concrete, and open to re-prioritization and re-sizing based on the chance that the needs and efforts are overlooked
----
 
 | Story | [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950431) |
 | ------ | ------ |
@@ -61,7 +61,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | ------ | ------ |
 | Story Number | 6 |
 | Size Estimate | M |
-| Details | Filter learning outcomes based on the specific program chosen. |
+| Details | After the user has chosen the program and year on the login, filter learning outcomes based on the specific program chosen. |
 |Acceptance Criteria | Establish relationships between objectives and programs, enable filtering, only allow user the allowed lists; for this story being objectives for specific program |
 | Assigned to | Muhammad Kashif Siddiqui |
 | Start Date | (Tuesday) 20th March, 2018 |
@@ -71,8 +71,8 @@ Represent the structure of a Department, and be able to track, edit and update t
 | ------ | ------ |
 | Story Number | 7 |
 | Size Estimate | M |
-| Details | - |
-|Acceptance Criteria | - |
+| Details | After the user has chosen the program and year on the login, filter based on the year will display the learning outcomes |
+|Acceptance Criteria | Establish relationships between objectives and years(of the course), enable filtering, only allow user the allowed lists; for this story being objectives for the specific year chosen |
 | Assigned to | Himanish Kaushal |
 | Start Date | (Monday) 12th March, 2018 |
 | End Date | - |
@@ -107,6 +107,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | (Sunday) 4th March, 2018 |
 | End Date | - |
 
+---
 
 # Sprint 1
 
@@ -122,6 +123,9 @@ Aim was to have the initial setup of the project completed; which included prope
 ---
 # Sprint 2
 
+## Goal: Overall ability completed from a user's perspective to view different parts of the entire department
+
+
 ## Plans:
 Have integration tests in place, complete Program domain model and establish relationships between courses, programs, years, categories, and learning outcomes. Hopefully also implement Administrator privileges to edit the list, and have a user only be able to view all the information. The specific lists the user is able to view need to be established as well, after the relationships and the domain models are set up.
 The relationships to establish are:
@@ -133,15 +137,13 @@ The relationships to establish are:
 
 We will also setup and maintain UML diagrams.
 
-## Goal: 
-
 **Stories worked on:**
   - Story Number 2 - [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950431)
   - Story Number 4 - [As a user, I should be able to View all the courses, so that I can navigate to the learning outcomes for a specific one ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841273)
   - Story Number 5 - [As a user, I should be able to list all categories, so that I can see them in the page ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841145)
   - Story Number 6 - [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901)
   - Story Number 7 - [As a user, I should be able to list learning outcomes for a specific year, so that I can see if I have completed them for the given year ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840874)
-  - Story Number 9 - [As an administrator, I should be able to edits the lists, so that the lists are always up to date ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7949973)
+  - Story Number 8 - [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371)
 
 ---
 # Sprint 3:
