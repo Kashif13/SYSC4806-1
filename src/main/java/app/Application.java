@@ -22,7 +22,8 @@ public class Application {
 
 
     @Bean
-    public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo) {
+    public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo,
+                                  CategoryRepository catRepo) {
         return (args) -> {
             // save a couple of learning outcomes
             loRepo.save(new LearningOutcome("Cloud", "knows to deploy a web app to the cloud"));
@@ -80,6 +81,33 @@ public class Application {
             log.info("--------------------------------------------");
             for (Program progs : progRepo.findByName("Software Engineering")) {
                 log.info(progs.toString());
+            }
+            log.info("");
+
+            // save a few categories with descriptions
+            catRepo.save(new Category("Design", "Should have good designing abilities."));
+            catRepo.save(new Category("Communication", "Should have good communication skills."));
+
+            // fetch all categories
+            log.info("Categories found with findAll():");
+            log.info("-------------------------------");
+            for (Category c : catRepo.findAll()) {
+                log.info(c.toString());
+            }
+            log.info("");
+
+            // fetch an individual learning outcome by ID
+            Category c1 = catRepo.findOne(1L);
+            log.info("Category found with findOne(1L):");
+            log.info("--------------------------------");
+            log.info(c1.toString());
+            log.info("");
+
+            // fetch categories of name "Communication"
+            log.info("Categories found with findByName('Communication'):");
+            log.info("--------------------------------------------");
+            for (Category cats : catRepo.findByName("Communication")) {
+                log.info(cats.toString());
             }
             log.info("");
         };

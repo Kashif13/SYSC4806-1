@@ -38,4 +38,10 @@ public class HttpRequestTest {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/addLearningOutcome",
                 String.class)).contains("Add Learning Outcome:");
     }
+
+    @Test
+    public void listCategoriesRequestShouldReturnList() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listCategories",
+                String.class)).contains("Pick Category to filter Learning Outcomes:");
+    }
 }

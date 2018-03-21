@@ -15,6 +15,9 @@ public class LearningOutcome {
     @ManyToOne
     private Program program;
 
+    @ManyToOne
+    private Category category;
+
     /**
      * Default constructor
      */

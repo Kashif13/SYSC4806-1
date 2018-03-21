@@ -11,16 +11,16 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Programs</h1>
+        <h1>Categories</h1>
     </div>
-
-    <select>
-        <span th:each="category : ${categories}">
-            <option th:value="${category.id}" th:text="${category.name}">
-            </option>
-        </span>
-    </select>
-
+    <p>Pick Category to filter Learning Outcomes:
+        <select>
+            <span th:each="category : ${categories}">
+                <option th:value="${category.id}" th:text="${category.name}">
+                </option>
+            </span>
+        </select>
+    </p>
     <br/>
 
     <!-- <input type="button"  onclick="location.href='/newProgram'" value="Add a new learning outcome" /> -->
