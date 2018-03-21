@@ -55,7 +55,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Ability to filter on chosen category after viewing all  |
 | Assigned to | Himanish Kaushal |
 | Start Date | (Wednesday) 21st March, 2018 |
-| End Date | - |
+| End Date | (Wednesday) 21st March, 2018 |
 
 | Story | [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901) |
 | ------ | ------ |
