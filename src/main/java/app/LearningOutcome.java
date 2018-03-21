@@ -11,11 +11,22 @@ public class LearningOutcome {
     private Long id;
     private String name;
     private String description;
+    private Program program;
 
     /**
      * Default constructor
      */
     public LearningOutcome() {}
+
+    /**
+     * Constructor incase name not provided. Gives it a blank name but retains description
+     * @param description
+     */
+    public LearningOutcome(String description) {
+        this.name = "";
+        this.description = description;
+    }
+
     /**
      * Constructor for learning outcomes
      * @param name - Name for learning outcomes, to easily identify
@@ -27,12 +38,15 @@ public class LearningOutcome {
     }
 
     /**
-     * Constructor incase name not provided. Gives it a blank name but retains description
-     * @param description
+     * Constructor for learning outcomes
+     * @param name - Name for learning outcomes, to easily identify
+     * @param description - Description used to display what the learning outcome is
+     * @param prog - program this learning outcome belongs to
      */
-    public LearningOutcome(String description) {
-        this.name = "";
+    public LearningOutcome(String name, String description, Program prog) {
+        this.name = name;
         this.description = description;
+        this.program = prog;
     }
 
     /** Getters **/
@@ -42,6 +56,8 @@ public class LearningOutcome {
     public String getDescription() { return description; }
     public String getName() { return name; }
 
+    @ManyToOne
+    public Program getProgram() { return program; }
 
 
     /** Setters **/
@@ -50,15 +66,16 @@ public class LearningOutcome {
     }
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
+    public void setProgram(Program prog) { this.program = prog; }
 
 
     /**
      * Overridden toString method to ensure only description is displayed
-     * @return
+     * @return String - description of the learning outcome
      */
     @Override
     public String toString(){
-        return description;
+        return "ID: " +this.getId() + ", Name: " +this.name + ", Description: " + this.description + ", Program: " + this.program;
     }
 
 }
