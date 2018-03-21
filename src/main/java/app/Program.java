@@ -68,13 +68,13 @@ public class Program {
     public void removeLearningOutcome(LearningOutcome lo){ this.learningOutcomes.remove(lo); }
 
     /**
-     * Function for adding learning outcome
+     * Function for adding course
      * @param course - Course to be added
      */
     public void addCourse(Course course){ this.courses.add(course); }
 
     /**
-     * Function for removing learning outcome
+     * Function for removing a course
      * @param course - Course to be removed
      */
     public void removeCourse(Course course){ this.courses.remove(course); }

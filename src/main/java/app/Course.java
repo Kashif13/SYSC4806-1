@@ -55,14 +55,14 @@ public class Course {
     }
 
     /**
-     * Function for adding learning outcome
+     * Function for adding program
      * @param p - Program to be added
      */
     public void addProgram(Program p){ this.programs.add(p); }
 
     /**
-     * Function for removing learning outcome
-     * @param p - Course to be removed
+     * Function for removing program
+     * @param p - program to be removed
      */
     public void removeProgram(Program p){ this.programs.remove(p); }
 
