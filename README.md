@@ -41,30 +41,30 @@ Represent the structure of a Department, and be able to track, edit and update t
 | ------ | ------ |
 | Story Number | 4 |
 | Size Estimate | M |
-| Details | - |
-|Acceptance Criteria | Dropdown/List view to choose course from and navigate to learning outcomes based on course |
+| Details | Dropdown/List view to choose course from and navigate to learning outcomes based on course |
+|Acceptance Criteria | Establish reltaionship between learning outcomes and courses, add ability to view learning outcomes based on course |
 | Assigned to | Sheikh Faisal Anwar |
-| Start Date | 12/03/2018 |
+| Start Date | (Monday) 12th March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to list all categories, so that I can see them in the page ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841145) |
 | ------ | ------ |
 | Story Number | 5 |
 | Size Estimate | S |
-| Details | - |
-|Acceptance Criteria | Dropdown/Listview of all categories and filtering based on chosen one  |
+| Details | Dropdown/Listview of all categories and filtering based on chosen one |
+|Acceptance Criteria | Ability to filter on chosen category after viewing all  |
 | Assigned to | Sheikh Faisal Anwar |
-| Start Date | 12/03/2018 |
+| Start Date | (Monday) 12th March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901) |
 | ------ | ------ |
 | Story Number | 6 |
 | Size Estimate | M |
-| Details | - |
-|Acceptance Criteria | - |
+| Details | Filter learning outcomes based on the specific program chosen. |
+|Acceptance Criteria | Establish relationships between objectives and programs, enable filtering, only allow user the allowed lists; for this story being objectives for specific program |
 | Assigned to | Muhammad Kashif Siddiqui |
-| Start Date | - |
+| Start Date | (Tuesday) 20th March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to list learning outcomes for a specific year, so that I can see if I have completed them for the given year ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840874) |
@@ -74,7 +74,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Details | - |
 |Acceptance Criteria | - |
 | Assigned to | Himanish Kaushal |
-| Start Date | 12 March, 2018 |
+| Start Date | (Monday) 12th March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) |
@@ -113,7 +113,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 ## Goal: Display list of Learning Outcomes
 Aim was to have the initial setup of the project completed; which included proper version control repo, integrated with Travis CI, and the app should be up and running in production on Heroku. Along with having the first feature of having the ability to work with the backend and display information to the user after logging in, which includes the list of programs and learning outcomes for the time being. Already populated with a very small list of learning outcomes.
 
-**Stories worked on for Sprint 1:**
+**Stories worked on:**
   - Story Number 1 - [As a user, I should be able to login to the app, so that I can display different lists of information related to the department ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7842757)
   - Story Number 2 - [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950431)
   - Story Number 3 - [As a user, I should be able to list all learning outcomes, so that I can see all that are required ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950442)
@@ -134,6 +134,14 @@ The relationships to establish are:
 We will also setup and maintain UML diagrams.
 
 ## Goal: 
+
+**Stories worked on:**
+  - Story Number 2 - [As a user, I should be able to view all the programs that are available, so that I can see the students registered in them ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7950431)
+  - Story Number 4 - [As a user, I should be able to View all the courses, so that I can navigate to the learning outcomes for a specific one ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841273)
+  - Story Number 5 - [As a user, I should be able to list all categories, so that I can see them in the page ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841145)
+  - Story Number 6 - [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901)
+  - Story Number 7 - [As a user, I should be able to list learning outcomes for a specific year, so that I can see if I have completed them for the given year ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840874)
+  - Story Number 9 - [As an administrator, I should be able to edits the lists, so that the lists are always up to date ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7949973)
 
 ---
 # Sprint 3:
