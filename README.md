@@ -53,8 +53,8 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | S |
 | Details | Dropdown/Listview of all categories and filtering based on chosen one |
 |Acceptance Criteria | Ability to filter on chosen category after viewing all  |
-| Assigned to | Sheikh Faisal Anwar |
-| Start Date | (Monday) 12th March, 2018 |
+| Assigned to | Himanish Kaushal |
+| Start Date | (Wednesday) 21st March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901) |
