@@ -13,6 +13,8 @@ public class Program {
     private Long id;
     private String name;
     private String description;
+
+    @OneToMany(mappedBy = "program", cascade = CascadeType.PERSIST)
     private List<LearningOutcome> learningOutcomes = new ArrayList<LearningOutcome>();
 
     /**
@@ -70,8 +72,6 @@ public class Program {
     }
     public String getDescription() { return description; }
     public String getName() { return name; }
-
-    @OneToMany(mappedBy = "program", cascade = CascadeType.PERSIST)
     public List<LearningOutcome> getLearningOutcomes() { return learningOutcomes; }
 
     /** Setters **/

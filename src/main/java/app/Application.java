@@ -68,7 +68,7 @@ public class Application {
             }
             log.info("");
 
-            // fetch an individual laerning outcome by ID
+            // fetch an individual learning outcome by ID
             Program p1 = progRepo.findOne(1L);
             log.info("Program found with findOne(1L):");
             log.info("--------------------------------");

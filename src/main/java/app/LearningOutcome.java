@@ -11,6 +11,8 @@ public class LearningOutcome {
     private Long id;
     private String name;
     private String description;
+
+    @ManyToOne
     private Program program;
 
     /**
@@ -41,12 +43,12 @@ public class LearningOutcome {
      * Constructor for learning outcomes
      * @param name - Name for learning outcomes, to easily identify
      * @param description - Description used to display what the learning outcome is
-     * @param prog - program this learning outcome belongs to
+     * @param program - program this learning outcome belongs to
      */
-    public LearningOutcome(String name, String description, Program prog) {
+    public LearningOutcome(String name, String description, Program program) {
         this.name = name;
         this.description = description;
-        this.program = prog;
+        this.program = program;
     }
 
     /** Getters **/
@@ -55,8 +57,6 @@ public class LearningOutcome {
     }
     public String getDescription() { return description; }
     public String getName() { return name; }
-
-    @ManyToOne
     public Program getProgram() { return program; }
 
 
@@ -66,7 +66,7 @@ public class LearningOutcome {
     }
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
-    public void setProgram(Program prog) { this.program = prog; }
+    public void setProgram(Program program) { this.program = program; }
 
 
     /**
@@ -75,7 +75,7 @@ public class LearningOutcome {
      */
     @Override
     public String toString(){
-        return "ID: " +this.getId() + ", Name: " +this.name + ", Description: " + this.description + ", Program: " + this.program;
+        return "ID: " +this.getId() + ", Name: " +this.name + ", Description: " + this.description;
     }
 
 }
