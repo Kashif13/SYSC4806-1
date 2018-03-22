@@ -71,6 +71,7 @@ public class Program {
     }
     public String getDescription() { return description; }
     public String getName() { return name; }
+    public List<Course> getCourse() { return courses; }
 
     /** Setters **/
     public void setId(Long objectiveId) {
@@ -78,6 +79,7 @@ public class Program {
     }
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
+    public void setCourses(List<Course> courses) { this.courses = courses; }
 
 
     /**
