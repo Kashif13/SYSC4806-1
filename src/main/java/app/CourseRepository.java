@@ -12,7 +12,6 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel="courses", path ="courses")
 public interface CourseRepository extends CrudRepository<Course, Long> {
-
         List<Course> findAll();
         List<Course> findByName(String name);
         List<Course> findByProgramsIn(List<Program> program);
