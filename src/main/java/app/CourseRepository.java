@@ -15,7 +15,9 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 
         List<Course> findAll();
         List<Course> findByName(String name);
-        //List<Course> findByProgram(Program program);
+        List<Course> findByProgramsIn(List<Program> program);
+        List<Course> findByYear(AcademicYear year);
+
 
 }
 

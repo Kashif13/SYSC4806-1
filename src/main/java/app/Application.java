@@ -11,6 +11,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootApplication
 @EnableAutoConfiguration
 public class Application {
@@ -22,8 +25,8 @@ public class Application {
 
 
     @Bean
-    public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo,
-                                  CategoryRepository catRepo) {
+
+    public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo, CourseRepository courseRepo, CategoryRepository catRepo) {
         return (args) -> {
             // save a few categories with descriptions
             catRepo.save(new Category("Design", "Should have good designing abilities."));
@@ -83,11 +86,21 @@ public class Application {
             log.info("");
 
             // save a few programs with descriptions
-            progRepo.save(new Program("Software Engineering", "Intense program involving the design, " +
-                    "development and maintenance of software and computer systems."));
-            progRepo.save(new Program("Women's Studies", "Not so intense program involving ..."));
-            progRepo.save(new Program("Psychology", ""));
+            Program p1 = new Program("Software Engineering", "Intense program involving the design, " +
+                    "development and maintenance of software and computer systems.");
+            Program p2 = new Program("Women's Studies", "Not so intense program involving ...");
+            Program p3 = new Program("Psychology", "");
+            //save a few course and years
+            List<Program> programs = new ArrayList<>();
+            List<Program> programs2 = new ArrayList<>();
 
+            programs.add(p1);
+            programs2.add(p2);
+            courseRepo.save(new Course("SYSC4005", "Systems and Simulation", AcademicYear.YEAR_1, programs));
+            courseRepo.save(new Course("SYSC4806", "Software Engineering lab", AcademicYear.YEAR_4, programs2));
+            progRepo.save(p1);
+            progRepo.save(p2);
+            progRepo.save(p3);
             // fetch all programs
             log.info("Programs found with findAll():");
             log.info("-------------------------------");
@@ -97,10 +110,10 @@ public class Application {
             log.info("");
 
             // fetch an individual learning outcome by ID
-            Program p1 = progRepo.findOne(1L);
+            Program ptest = progRepo.findOne(1L);
             log.info("Program found with findOne(1L):");
             log.info("--------------------------------");
-            log.info(p1.toString());
+            log.info(ptest.toString());
             log.info("");
 
             // fetch programs of name "Software Engineering"
