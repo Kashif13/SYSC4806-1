@@ -56,9 +56,4 @@ public class HttpRequestTest {
                 String.class)).contains("Programs");
     }
 
-    @Test
-    public void listLearningOutcomesForProgramShouldContainLearningOutcomeList() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/displayLearningOutcomesForProgram",
-                String.class)).contains("Learning Outcomes");
-    }
 }
