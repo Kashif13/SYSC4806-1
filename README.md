@@ -45,7 +45,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Establish reltaionship between learning outcomes and courses, add ability to view learning outcomes based on course |
 | Assigned to | Sheikh Faisal Anwar |
 | Start Date | (Monday) 12th March, 2018 |
-| End Date | - |
+| End Date | (Wednesday) 21st March, 2018 |
 
 | Story | [As a user, I should be able to list all categories, so that I can see them in the page ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841145) |
 | ------ | ------ |
@@ -65,7 +65,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Establish relationships between objectives and programs, enable filtering, only allow user the allowed lists; for this story being objectives for specific program |
 | Assigned to | Muhammad Kashif Siddiqui |
 | Start Date | (Tuesday) 20th March, 2018 |
-| End Date | - |
+| End Date | (Thursday) 22nd March, 2018 |
 
 | Story | [As a user, I should be able to list learning outcomes for a specific year, so that I can see if I have completed them for the given year ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840874) |
 | ------ | ------ |
@@ -75,6 +75,16 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Establish relationships between objectives and years(of the course), enable filtering, only allow user the allowed lists; for this story being objectives for the specific year chosen |
 | Assigned to | Muhammad Kashif Siddiqui |
 | Start Date | (Monday) 12th March, 2018 |
+| End Date | (Thursday) 22nd March, 2018 |
+
+| Story | [As a User, I should be able to add new Categories with a specific name and description so that I can link specific Learning Outcomes based on the added Category.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360478) |
+| ------ | ------ |
+| Story Number | 10 |
+| Size Estimate | S |
+| Details | The User should be able to access a form where she can fill details about a Category name and description and add it to the list of available categories. |
+|Acceptance Criteria | Create form and follow up 'success!' page. |
+| Assigned to | Himanish Kaushal |
+| Start Date | (Wednesday) 21st March, 2018 |
 | End Date | - |
 
 | Story | [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) |
@@ -105,16 +115,6 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Setup travis, heroku. Add class and entity relations for users and user roles. Have login page (needed for admin vs user), ability to register. View top level of department after logging in |
 | Assigned to | Sheikh Faisal Anwar |
 | Start Date | (Sunday) 4th March, 2018 |
-| End Date | - |
-
-| Story | [As a User, I should be able to add new Categories with a specific name and description so that I can link specific Learning Outcomes based on the added Category.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360478) |
-| ------ | ------ |
-| Story Number | 10 |
-| Size Estimate | S |
-| Details | The User should be able to access a form where she can fill details about a Category name and description and add it to the list of available categories. |
-|Acceptance Criteria | Create form and follow up 'success!' page. |
-| Assigned to | Himanish Kaushal |
-| Start Date | (Wednesday) 21st March, 2018 |
 | End Date | - |
 
 | Story | [As a User, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554) |
