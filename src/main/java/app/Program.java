@@ -13,11 +13,8 @@ public class Program {
     private Long id;
     private String name;
     private String description;
-    @ManyToMany
-    private List<Course> courses;
-
-    @OneToMany(mappedBy = "program", cascade = CascadeType.PERSIST)
-    private List<LearningOutcome> learningOutcomes = new ArrayList<LearningOutcome>();
+    @ManyToMany(mappedBy="programs",cascade = CascadeType.ALL)
+    private List<Course> courses = new ArrayList<Course>();
 
     /**
      * Default constructor
@@ -56,18 +53,6 @@ public class Program {
     }
 
     /**
-     * Function for adding learning outcome
-     * @param lo - Learning outcome to be added
-     */
-    public void addLearningOutcome(LearningOutcome lo){ this.learningOutcomes.add(lo); }
-
-    /**
-     * Function for removing learning outcome
-     * @param lo - Learning outcome to be removed
-     */
-    public void removeLearningOutcome(LearningOutcome lo){ this.learningOutcomes.remove(lo); }
-
-    /**
      * Function for adding course
      * @param course - Course to be added
      */
@@ -86,7 +71,6 @@ public class Program {
     }
     public String getDescription() { return description; }
     public String getName() { return name; }
-    public List<LearningOutcome> getLearningOutcomes() { return learningOutcomes; }
 
     /** Setters **/
     public void setId(Long objectiveId) {
@@ -94,7 +78,6 @@ public class Program {
     }
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
-    public void setLearningOutcomes(List<LearningOutcome> los) { this.learningOutcomes = los; }
 
 
     /**

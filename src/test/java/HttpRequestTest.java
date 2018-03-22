@@ -1,7 +1,4 @@
-import static org.assertj.core.api.Assertions.assertThat;
-
 import app.Application;
-import app.UserController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes= Application.class)
@@ -49,5 +48,11 @@ public class HttpRequestTest {
     public void listLearningOutcomesByCategoryRequestShouldReturnList() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listLearningOutcomesByCategory?id=1",
                 String.class)).contains("Learning Outcomes");
+    }
+
+    @Test
+    public void listProgramsShouldContainProgramsList() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listPrograms",
+                String.class)).contains("Programs");
     }
 }

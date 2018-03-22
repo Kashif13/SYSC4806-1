@@ -13,9 +13,6 @@ public class LearningOutcome {
     private String description;
 
     @ManyToOne
-    private Program program;
-
-    @ManyToOne
     private Category category;
 
     /**
@@ -51,7 +48,6 @@ public class LearningOutcome {
     public LearningOutcome(String name, String description, Program program) {
         this.name = name;
         this.description = description;
-        this.program = program;
     }
 
     /**
@@ -72,16 +68,15 @@ public class LearningOutcome {
     }
     public String getDescription() { return description; }
     public String getName() { return name; }
-    public Program getProgram() { return program; }
-    public Category getCategory() { return category; }
 
+    public Category getCategory() { return category; }
+    
     /** Setters **/
     public void setId(Long objectiveId) {
         this.id = objectiveId;
     }
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
-    public void setProgram(Program program) { this.program = program; }
     public void setCategory(Category category) { this.category = category; }
 
     /**
@@ -91,9 +86,6 @@ public class LearningOutcome {
     @Override
     public String toString(){
         String str = "ID: " +this.getId() + ", Name: " + this.name + ", Description: " + this.description;
-        if (this.program != null) {
-            str += ", Program: " + program.toString();
-        }
         if (this.category != null) {
             str += ", Category: " + category.toString();
         }

@@ -1,6 +1,7 @@
 package app;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,8 +16,12 @@ public class Course {
     private String name;
     private String description;
     private AcademicYear year;
-    @ManyToMany
-    private List<Program> programs;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="COURSE_PROGRAM",
+            joinColumns=@JoinColumn(name="COURSE_ID"),
+            inverseJoinColumns = @JoinColumn(name="PROGRAM_ID")
+    )
+    private List<Program> programs = new ArrayList<Program>();
 
 
     /**
