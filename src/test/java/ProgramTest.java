@@ -1,3 +1,4 @@
+import app.Course;
 import app.Program;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,12 @@ public class ProgramTest {
     public void testToString() throws Exception {
         p1.setId(1L);
         assertEquals("ID: 1, NameTest: DescTest", p1.toString());
+    }
+
+    @Test
+    public void testAddCourse() throws Exception{
+        p1.addCourse(new Course("CourseTest"));
+        assertEquals("CourseTest", p1.getCourse().get(0).getName());
     }
 
 }
