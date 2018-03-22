@@ -15,7 +15,6 @@ public class LearningOutcome {
     @ManyToOne
     private Category category;
 
-
     /**
      * Default constructor
      */
@@ -63,7 +62,6 @@ public class LearningOutcome {
         this.category = category;
     }
 
-
     /** Getters **/
     public Long getId() {
         return id;
@@ -72,10 +70,7 @@ public class LearningOutcome {
     public String getName() { return name; }
 
     public Category getCategory() { return category; }
-
-
-
-
+    
     /** Setters **/
     public void setId(Long objectiveId) {
         this.id = objectiveId;

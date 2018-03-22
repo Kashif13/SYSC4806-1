@@ -25,7 +25,6 @@ public class Application {
 
 
     @Bean
-
     public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo, CourseRepository courseRepo, CategoryRepository catRepo) {
         return (args) -> {
             // save a few categories with descriptions
