@@ -9,4 +9,5 @@ import java.util.List;
 public interface LearningOutcomeRepository extends CrudRepository<LearningOutcome, Long> {
     List<LearningOutcome> findByName(String name);
     List<LearningOutcome> findByCategory (Category category);
+    List<LearningOutcome> findByCourse (Course course);
 }

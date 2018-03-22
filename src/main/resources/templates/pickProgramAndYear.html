@@ -29,6 +29,24 @@
         <input id="submit" type="submit" value="Show Courses For this Program"/>
     </form>
     <br/>
+
+    <form  id="programForm2" th:action="@{/displayLearningOutcomesForProgram}" th:object="${programAndYear}" method="POST">
+
+        <select th:field="*{program}">
+            <option th:each="program : ${programs}"
+                    th:value="${program.id}" th:text="${program.name}">
+            </option>
+        </select>
+
+        <select th:field="*{year}">
+            <option th:each="year : ${years}"
+                    th:value="${year}" th:text="${year}">
+            </option>
+        </select>
+        <input id="submit2" type="submit" value="Show Learning Outcomes For this Program"/>
+    </form>
+
+    <br/>
 </div>
 </body>
 
