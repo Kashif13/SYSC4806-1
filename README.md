@@ -73,7 +73,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | M |
 | Details | After the user has chosen the program and year on the login, filter based on the year will display the learning outcomes |
 |Acceptance Criteria | Establish relationships between objectives and years(of the course), enable filtering, only allow user the allowed lists; for this story being objectives for the specific year chosen |
-| Assigned to | Himanish Kaushal |
+| Assigned to | Muhammad Kashif Siddiqui |
 | Start Date | (Monday) 12th March, 2018 |
 | End Date | - |
 
@@ -179,7 +179,14 @@ We will also setup and maintain UML diagrams.
 # Sprint 3:
 
 ## Plans:
-
+  - Finish Establishing all relationships
+  - Have User/Admin login page and privileges set in place
+    - Admin can edit everything
+  - Export results as CSV
+  - Maintain and Update UML diagram
+  - Decide on Final Scope
+  - Improve UI
+  - Complete incomplete functionalities + add more tests
   
   
 ---
