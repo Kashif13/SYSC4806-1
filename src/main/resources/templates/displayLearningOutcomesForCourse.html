@@ -11,20 +11,21 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Courses</h1>
+        <h1>Learning Outcomes</h1>
     </div>
-    <form  id="courseForm" th:action="@{/displayLearningOutcomesForCourse}" th:object="${course}" method="POST">
-        <select th:field="*{id}">
-            <option th:each="course : ${courses}"
-                    th:value="${course.id}" th:text="${course.name}">
-            </option>
-        </select>
 
-        <input id="submit" type="submit" value="Show Learning Outcomes for Course"/>
-    </form>
+    <tr th:each="learningOutcome : ${learningOutcomes}">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title" th:text="${learningOutcome.name}">1</h4>
+                <p>Description: </p><p class="card-text" th:text="${learningOutcome.description}">Title ...</p>
+                <br/>
+            </div>
+        </div>
+    </tr>
     <br/>
-    <p><input type="button"  onclick="location.href='/listCourses'" value="View All Courses" /></p>
 
+    <input type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
     <br/>
 </div>
 </body>
