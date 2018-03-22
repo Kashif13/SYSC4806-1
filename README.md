@@ -107,6 +107,36 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | (Sunday) 4th March, 2018 |
 | End Date | - |
 
+| Story | [As a User, I should be able to add new Categories with a specific name and description so that I can link specific Learning Outcomes based on the added Category.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360478) |
+| ------ | ------ |
+| Story Number | 10 |
+| Size Estimate | S |
+| Details | The User should be able to access a form where she can fill details about a Category name and description and add it to the list of available categories. |
+|Acceptance Criteria | Create form and follow up 'success!' page. |
+| Assigned to | Himanish Kaushal |
+| Start Date | (Wednesday) 21st March, 2018 |
+| End Date | - |
+
+| Story | [As a User, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554) |
+| ------ | ------ |
+| Story Number | 11 |
+| Size Estimate | S |
+| Details | The User should be able to access a form where she can fill details about a Course name, description and academic year and add it to the list of available courses. |
+|Acceptance Criteria | Create form and follow up 'success!' page. |
+| Assigned to | - |
+| Start Date | - |
+| End Date | - |
+
+| Story | [As a User, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555) |
+| ------ | ------ |
+| Story Number | 12 |
+| Size Estimate | S |
+| Details | The User should be able to access a form where she can fill details about a Program name and description and add it to the list of available programs. |
+|Acceptance Criteria | Create form and follow up 'success!' page. |
+| Assigned to | - |
+| Start Date | - |
+| End Date | - |
+
 ---
 
 # Sprint 1
