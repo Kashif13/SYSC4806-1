@@ -174,6 +174,7 @@ We will also setup and maintain UML diagrams.
   - Story Number 6 - [As a user, I should be able to list learning outcomes for a specific program, so that I can see the outcomes required by the program ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840901)
   - Story Number 7 - [As a user, I should be able to list learning outcomes for a specific year, so that I can see if I have completed them for the given year ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7840874)
   - Story Number 8 - [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371)
+  - Story Number 10 - [As a User, I should be able to add new Categories with a specific name and description so that I can link specific Learning Outcomes based on the added Category.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360478)
 
 ---
 # Sprint 3:
