@@ -197,5 +197,5 @@ We will also setup and maintain UML diagrams.
 2. Import pom.xml
 3. Run Application.java as main
 4. On a browser navigate to localhost:8080 to view the app
-5. Herkou Link: https://learning-outcomes-manager.herokuapp.com/
+5. Heroku Link: https://learning-outcomes-manager.herokuapp.com/
  
