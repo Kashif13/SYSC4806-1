@@ -19,6 +19,11 @@ public class ProgramController {
 
     @Autowired
     private ProgramRepository program;
+    @Autowired
+    private CourseRepository courseRepo;
+    @Autowired
+    private LearningOutcomeRepository loRepo;
+
 
     @RequestMapping("/listPrograms")
     public String listPrograms(Model model){
@@ -41,11 +46,6 @@ public class ProgramController {
         return "pickProgramAndYear";
     }
 
-    @Autowired
-    private CourseRepository courseRepo;
-    @Autowired
-    private ProgramRepository programRepository;
-
     @PostMapping("/displayCourseForProgram")
     public String displayCourseForProgram(@ModelAttribute("programAndYear") ProgramAndYearForm programAndYear, BindingResult p, Model m) {
         List<Course> courses;
@@ -65,6 +65,34 @@ public class ProgramController {
         m.addAttribute("courses",finalizedList);
         m.addAttribute("course", new Course());
         return "displayCourseForProgram";
+    }
+
+    @PostMapping("/displayLearningOutcomesForProgram")
+    public String displayLearningOutcomesForProgram(@ModelAttribute("programAndYear") ProgramAndYearForm programAndYear, BindingResult p, Model m) {
+        List<Course> courses;
+        List<Course> courses2;
+        List<Course> finalizedListofCourses = new ArrayList<>();
+
+        List<Program> programs = new ArrayList<>();
+        programs.add(programAndYear.getProgram());
+        courses = courseRepo.findByProgramsIn(programs);
+        courses2 = courseRepo.findByYear(programAndYear.getYear());
+
+        for(int i = 0; i<courses.size(); i++ ){
+            if(courses2.contains(courses.get(i))){
+                finalizedListofCourses.add(courses.get(i));
+            }
+        }
+        List<LearningOutcome> finalizedListoflearningOutcomes = new ArrayList<>();
+        for(Course c : finalizedListofCourses){
+            for(LearningOutcome lo: loRepo.findByCourse(c)){
+                finalizedListoflearningOutcomes.add(lo);
+            }
+        }
+
+        m.addAttribute("learningOutcomes", finalizedListoflearningOutcomes);
+        m.addAttribute("learningOutcome", new LearningOutcome());
+        return "displayLearningOutcomesForProgram";
     }
 
 }
