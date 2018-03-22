@@ -12,19 +12,16 @@ public class LearningOutcome {
     private String name;
     private String description;
 
+    @ManyToOne
+    private Category category;
+
+    @ManyToOne
+    private Course course;
+
     /**
      * Default constructor
      */
     public LearningOutcome() {}
-    /**
-     * Constructor for learning outcomes
-     * @param name - Name for learning outcomes, to easily identify
-     * @param description - Description used to display what the learning outcome is
-     */
-    public LearningOutcome(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
 
     /**
      * Constructor incase name not provided. Gives it a blank name but retains description
@@ -35,30 +32,72 @@ public class LearningOutcome {
         this.description = description;
     }
 
+    /**
+     * Constructor for learning outcomes
+     * @param name - Name for learning outcomes, to easily identify
+     * @param description - Description used to display what the learning outcome is
+     */
+    public LearningOutcome(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+
+    /**
+     * Constructor for learning outcomes
+     * @param name - Name for learning outcomes, to easily identify
+     * @param description - Description used to display what the learning outcome is
+     * @param category - category this learning outcome belongs to
+     */
+    public LearningOutcome(String name, String description, Category category) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+    }
+
+    /**
+     * Constructor for learning outcomes
+     * @param name - Name for learning outcomes, to easily identify
+     * @param description - Description used to display what the learning outcome is
+     * @param category - category this learning outcome belongs to
+     * @param course - course that covers this learning outcome
+     */
+    public LearningOutcome(String name, String description, Category category, Course course) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.course = course;
+    }
+
     /** Getters **/
     public Long getId() {
         return id;
     }
     public String getDescription() { return description; }
     public String getName() { return name; }
-
-
-
+    public Category getCategory() { return category; }
+    public Course getCourse() { return course; }
+    
     /** Setters **/
     public void setId(Long objectiveId) {
         this.id = objectiveId;
     }
     public void setDescription(String desc) { this.description = desc; }
     public void setName(String name) { this.name = name; }
-
+    public void setCategory(Category category) { this.category = category; }
+    public void setCourse(Course course) { this.course = course; }
 
     /**
      * Overridden toString method to ensure only description is displayed
-     * @return
+     * @return String - description of the learning outcome
      */
     @Override
     public String toString(){
-        return description;
+        String str = "ID: " +this.getId() + ", Name: " + this.name + ", Description: " + this.description;
+        if (this.category != null) {
+            str += ", Category: " + category.toString();
+        }
+        return str;
     }
 
 }
