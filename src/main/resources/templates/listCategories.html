@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Programs</title>
+    <title>Categories</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -11,27 +11,21 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Categories</h1>
+        <h1>All Categories</h1>
     </div>
-    <form th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
-        <table>
-            <tr>
-                <td>Pick Category to filter Learning Outcomes:</td>
-                <td>
-                    <select th:field="*{id}">
-                        <option th:each="cat : ${categories}"
-                                th:value="${cat.id}"
-                                th:utext="${cat.name}"/>
-                    </select>
 
-                </td>
-            </tr>
+    <tr th:each="category : ${categories}">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title" th:text="${category.name}">1</h4><span th:if="${(newCategory != null) and (category.id == newCategory.id)}">*New*</span>
+                <p>Description: </p><p class="card-text" th:text="${category.description}">Title ...</p>
+                <br/>
+            </div>
+        </div>
+    </tr>
+    <br/>
 
-            <tr>
-                <td><input name="submit" type="submit" /></td>
-            </tr>
-        </table>
-    </form>
+    <input type="button"  onclick="location.href='/addCategory'" value="Add a new category" />
 </div>
 </body>
 

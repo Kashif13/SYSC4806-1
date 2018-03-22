@@ -42,7 +42,7 @@ public class LearningOutcomeController {
     }
 
     @PostMapping("/addLearningOutcome")
-    public String learningOutcomSubmit(@ModelAttribute("learningOutcome") LearningOutcome learningOutcome) {
+    public String learningOutcomeSubmit(@ModelAttribute("learningOutcome") LearningOutcome learningOutcome) {
         learningOutcomeRepo.save(learningOutcome);
         return "loResult";
     }

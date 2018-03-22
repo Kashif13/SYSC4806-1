@@ -41,7 +41,19 @@ public class HttpRequestTest {
     @Test
     public void listCategoriesRequestShouldReturnList() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listCategories",
+                String.class)).contains("All Categories");
+    }
+
+    @Test
+    public void pickCategoryRequestShouldReturnList() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/pickCategory",
                 String.class)).contains("Pick Category to filter Learning Outcomes:");
+    }
+
+    @Test
+    public void addCategoryRequestShouldReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/addCategory",
+                String.class)).contains("Add Category:");
     }
 
     @Test
