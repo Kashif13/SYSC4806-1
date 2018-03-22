@@ -14,24 +14,19 @@
         <h1>Categories</h1>
     </div>
     <form th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
-        <table>
-            <tr>
-                <td>Pick Category to filter Learning Outcomes:</td>
-                <td>
+
+                <p>Pick Category to filter Learning Outcomes:
                     <select th:field="*{id}">
                         <option th:each="cat : ${categories}"
                                 th:value="${cat.id}"
                                 th:utext="${cat.name}"/>
                     </select>
-
-                </td>
-            </tr>
-
-            <tr>
-                <td><input name="submit" type="submit" /></td>
-            </tr>
-        </table>
+                    <input name="submit" type="submit" />
+                </p>
     </form>
+    <hr/>
+    <a href="/listCategories">List All Categories</a><br/>
+    <a href="/">Home</a>
 </div>
 </body>
 
