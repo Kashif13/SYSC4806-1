@@ -1,5 +1,7 @@
 package app;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.List;
  * Created by Faisal on 2018-03-20.
  */
 @Entity
+@Data
 public class Course {
 
     @Id

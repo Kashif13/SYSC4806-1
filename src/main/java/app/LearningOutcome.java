@@ -1,9 +1,12 @@
 package app;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class LearningOutcome {
 
     @Id
@@ -68,24 +71,6 @@ public class LearningOutcome {
         this.category = category;
         this.course = course;
     }
-
-    /** Getters **/
-    public Long getId() {
-        return id;
-    }
-    public String getDescription() { return description; }
-    public String getName() { return name; }
-    public Category getCategory() { return category; }
-    public Course getCourse() { return course; }
-    
-    /** Setters **/
-    public void setId(Long objectiveId) {
-        this.id = objectiveId;
-    }
-    public void setDescription(String desc) { this.description = desc; }
-    public void setName(String name) { this.name = name; }
-    public void setCategory(Category category) { this.category = category; }
-    public void setCourse(Course course) { this.course = course; }
 
     /**
      * Overridden toString method to ensure only description is displayed

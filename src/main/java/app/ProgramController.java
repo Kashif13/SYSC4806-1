@@ -35,7 +35,7 @@ public class ProgramController {
     public String pickProgramAndYearForm(ModelMap model){
         ArrayList years = new ArrayList();
         for(int i=0; i < AcademicYear.values().length; i++) {
-            years.add(AcademicYear.values()[i]);
+            years.add(AcademicYear.values()[i].toString());
         }
         List<Program> programs = program.findAll();
 
@@ -54,8 +54,15 @@ public class ProgramController {
 
         List<Program> programs = new ArrayList<>();
         programs.add(programAndYear.getProgram());
+        AcademicYear year = null;
+        for(int i=0; i < AcademicYear.values().length; i++) {
+            if(AcademicYear.values()[i].toString().equals(programAndYear.getYear())){
+                year = AcademicYear.values()[i];
+            }
+        }
         courses = courseRepo.findByProgramsIn(programs);
-        courses2 = courseRepo.findByYear(programAndYear.getYear());
+
+        courses2 = courseRepo.findByYear(year);
 
         for(int i = 0; i<courses.size(); i++ ){
             if(courses2.contains(courses.get(i))){
@@ -76,8 +83,13 @@ public class ProgramController {
         List<Program> programs = new ArrayList<>();
         programs.add(programAndYear.getProgram());
         courses = courseRepo.findByProgramsIn(programs);
-        courses2 = courseRepo.findByYear(programAndYear.getYear());
-
+        AcademicYear year = null;
+        for(int i=0; i < AcademicYear.values().length; i++) {
+            if(AcademicYear.values()[i].toString()==programAndYear.getYear()){
+                year = AcademicYear.values()[i];
+            }
+        }
+        courses2 = courseRepo.findByYear(year);
         for(int i = 0; i<courses.size(); i++ ){
             if(courses2.contains(courses.get(i))){
                 finalizedListofCourses.add(courses.get(i));

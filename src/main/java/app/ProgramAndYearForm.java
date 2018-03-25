@@ -1,31 +1,18 @@
 package app;
 
+import lombok.Data;
+
 /**
  * Created by Faisal on 2018-03-21.
  */
+@Data
 public class ProgramAndYearForm {
 
     private Program program;
-    private AcademicYear year;
+    private String year;
 
     /**
      * Default constructor
      */
     public ProgramAndYearForm() {}
-
-    public Program getProgram() {
-        return program;
-    }
-
-    public void setProgram(Program program) {
-        this.program = program;
-    }
-
-    public AcademicYear getYear() {
-        return year;
-    }
-
-    public void setYear(AcademicYear year) {
-        this.year = year;
-    }
 }
