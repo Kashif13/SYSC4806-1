@@ -22,7 +22,7 @@ function searchAjax() {
         timeout : 100000,
         success : function(data) {
             console.log("SUCCESS: ", data);
-            $("#success").append("SUCCESS: Filtered - ", JSON.stringify(data.name),);
+            $("#success").append("SUCCESS: Filtered - ", JSON.stringify(data.name));
         },
         error : function(e) {
             console.log("ERROR: ", e);

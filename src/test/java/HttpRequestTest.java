@@ -23,7 +23,7 @@ public class HttpRequestTest {
     @Test
     public void indexRequestShouldReturnDefaultMessage() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
-                String.class)).contains("Welcome");
+                String.class)).contains("Learning Outcomes Manager");
     }
 
     @Test

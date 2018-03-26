@@ -33,7 +33,7 @@ public class ProgramTest {
     @Test
     public void testAddCourse() throws Exception{
         p1.addCourse(new Course("CourseTest"));
-        assertEquals("CourseTest", p1.getCourse().get(0).getName());
+        assertEquals("CourseTest", p1.getCourses().get(0).getName());
     }
 
 }

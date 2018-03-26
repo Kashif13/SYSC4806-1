@@ -1,11 +1,14 @@
 package app;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
 public class Category {
 
     @Id
@@ -64,23 +67,6 @@ public class Category {
      * @param lo - Learning outcome to be removed
      */
     public void removeLearningOutcome(LearningOutcome lo){ this.learningOutcomes.remove(lo); }
-
-
-    /** Getters **/
-    public Long getId() {
-        return id;
-    }
-    public String getDescription() { return description; }
-    public String getName() { return name; }
-    public List<LearningOutcome> getLearningOutcomes() { return learningOutcomes; }
-
-    /** Setters **/
-    public void setId(Long objectiveId) {
-        this.id = objectiveId;
-    }
-    public void setDescription(String desc) { this.description = desc; }
-    public void setName(String name) { this.name = name; }
-    public void setLearningOutcomes(List<LearningOutcome> los) { this.learningOutcomes = los; }
 
 
     /**
