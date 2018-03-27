@@ -85,7 +85,7 @@ public class ProgramController {
         courses = courseRepo.findByProgramsIn(programs);
         AcademicYear year = null;
         for(int i=0; i < AcademicYear.values().length; i++) {
-            if(AcademicYear.values()[i].toString()==programAndYear.getYear()){
+            if(AcademicYear.values()[i].toString().equals(programAndYear.getYear())){
                 year = AcademicYear.values()[i];
             }
         }
