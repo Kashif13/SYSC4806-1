@@ -7,27 +7,28 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
-    <link rel="stylesheet" href="base.css"></link>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="category.css" />
 </head>
 <body>
 <div class="container">
     <div class="page-header">
         <h1>Categories</h1>
     </div>
-    <form th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
+    <form class="form-inline" th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
 
                 <p>Pick Category to filter Learning Outcomes:
-                    <select th:field="*{id}">
+                    <select class="form-control" th:field="*{id}">
                         <option th:each="cat : ${categories}"
                                 th:value="${cat.id}"
                                 th:utext="${cat.name}"/>
                     </select>
-                    <input name="submit" type="submit" />
+                    <input class="btn btn-warning" name="submit" type="submit" />
                 </p>
     </form>
     <hr/>
-    <input type="button"  onclick="location.href='/listCategories'" value="List All Categories" />
-    <input type="button"  onclick="location.href='/'" value="Home" />
+    <input class="btn btn-warning" type="button"  onclick="location.href='/listCategories'" value="List All Categories" />
+    <input class="btn btn-warning" type="button"  onclick="location.href='/'" value="Home" />
 </div>
 </body>
 </html>
