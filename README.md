@@ -87,6 +87,27 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | (Wednesday) 21st March, 2018 |
 | End Date | (Wednesday) 21st March, 2018 |
 
+| Story | [As a User, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554) |
+| ------ | ------ |
+| Story Number | 11 |
+| Size Estimate | S |
+| Details | The User should be able to access a form where she can fill details about a Course name, description and academic year and add it to the list of available courses. |
+|Acceptance Criteria | Create form and follow up 'success!' page. |
+| Assigned to | Muhammad Siddiqui |
+| Start Date | - |
+| End Date | - |
+
+| Story | [As a User, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555) |
+| ------ | ------ |
+| Story Number | 12 |
+| Size Estimate | S |
+| Details | The User should be able to access a form where she can fill details about a Program name and description and add it to the list of available programs. |
+|Acceptance Criteria | Create form and follow up 'success!' page. |
+| Assigned to | Himanish Kaushal  |
+| Start Date | - |
+| End Date | - |
+
+
 | Story | [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) |
 | ------ | ------ |
 | Story Number | 8 |
@@ -115,26 +136,6 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Setup travis, heroku. Add class and entity relations for users and user roles. Have login page (needed for admin vs user), ability to register. View top level of department after logging in |
 | Assigned to | Sheikh Faisal Anwar |
 | Start Date | (Sunday) 4th March, 2018 |
-| End Date | - |
-
-| Story | [As a User, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554) |
-| ------ | ------ |
-| Story Number | 11 |
-| Size Estimate | S |
-| Details | The User should be able to access a form where she can fill details about a Course name, description and academic year and add it to the list of available courses. |
-|Acceptance Criteria | Create form and follow up 'success!' page. |
-| Assigned to | - |
-| Start Date | - |
-| End Date | - |
-
-| Story | [As a User, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555) |
-| ------ | ------ |
-| Story Number | 12 |
-| Size Estimate | S |
-| Details | The User should be able to access a form where she can fill details about a Program name and description and add it to the list of available programs. |
-|Acceptance Criteria | Create form and follow up 'success!' page. |
-| Assigned to | - |
-| Start Date | - |
 | End Date | - |
 
 ---
@@ -179,6 +180,8 @@ We will also setup and maintain UML diagrams.
 ---
 # Sprint 3:
 
+## Goal: Feature Complete Learning Outcomes Management System
+
 ## Plans:
   - Finish Establishing all relationships
   - Have User/Admin login page and privileges set in place
@@ -188,6 +191,9 @@ We will also setup and maintain UML diagrams.
   - Decide on Final Scope
   - Improve UI
   - Complete incomplete functionalities + add more tests
+  
+**Stories worked on:**
+  
   
   
 ---
