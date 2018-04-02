@@ -18,7 +18,7 @@ public class ProgramController {
 
 
     @Autowired
-    private ProgramRepository program;
+    private ProgramRepository programRepo;
     @Autowired
     private CourseRepository courseRepo;
     @Autowired
@@ -27,7 +27,7 @@ public class ProgramController {
 
     @RequestMapping("/listPrograms")
     public String listPrograms(Model model){
-        model.addAttribute("programs", program.findAll());
+        model.addAttribute("programs", programRepo.findAll());
         return "listPrograms";
     }
 
@@ -37,7 +37,7 @@ public class ProgramController {
         for(int i=0; i < AcademicYear.values().length; i++) {
             years.add(AcademicYear.values()[i].toString());
         }
-        List<Program> programs = program.findAll();
+        List<Program> programs = programRepo.findAll();
 
 
         model.addAttribute("programAndYear", new ProgramAndYearForm());
@@ -105,6 +105,20 @@ public class ProgramController {
         m.addAttribute("learningOutcomes", finalizedListoflearningOutcomes);
         m.addAttribute("learningOutcome", new LearningOutcome());
         return "displayLearningOutcomesForProgram";
+    }
+
+    @GetMapping("/addProgram")
+    public String programForm(Model model){
+        Program program = new Program();
+        model.addAttribute("program", program);
+        return "programForm";
+    }
+
+    @PostMapping("/addProgram")
+    public String programSubmit(@ModelAttribute("program") Program program, Model model) {
+        Program newProgram = programRepo.save(program);
+        model.addAttribute("newProgram", newProgram);
+        return "newProgram";
     }
 
 }
