@@ -107,18 +107,19 @@ public class ProgramController {
         return "displayLearningOutcomesForProgram";
     }
 
-    @GetMapping("/addProgram")
-    public String programForm(Model model){
+    @GetMapping("/newProgram")
+    public String newProgram(Model model){
         Program program = new Program();
         model.addAttribute("program", program);
-        return "programForm";
+        return "newProgramForm";
     }
 
-    @PostMapping("/addProgram")
-    public String programSubmit(@ModelAttribute("program") Program program, Model model) {
+    @PostMapping("/createProgram")
+    public String createProgram(@ModelAttribute("program") Program program, Model model) {
         Program newProgram = programRepo.save(program);
+        model.addAttribute("programs", programRepo.findAll());
         model.addAttribute("newProgram", newProgram);
-        return "newProgram";
+        return "listPrograms";
     }
 
 }
