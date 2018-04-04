@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,12 +21,25 @@ public class CourseController {
     private CourseRepository courseRepo;
     @Autowired
     private LearningOutcomeRepository loRepo;
+    @Autowired
+    private CategoryRepository categoryRepo;
 
     @RequestMapping("/listCourses")
     public String listCourses(Model model){
         model.addAttribute("courses", courseRepo.findAll());
         return "listCourses";
     }
+
+    @RequestMapping("/listCoursesByCategory")
+    public String listCoursesByCategory(@ModelAttribute("category") Category category, Model model){
+        List<LearningOutcome> los = loRepo.findByCategory(category);
+        List<Course> courses = new ArrayList<>();
+        for(LearningOutcome lo : los)
+            courses.add(lo.getCourse());
+        model.addAttribute("courses", courses);
+        return "listCourses";
+    }
+
     @GetMapping("/addNewCourse")
     public String newCourseForm(Model model){
         Course course= new Course();
