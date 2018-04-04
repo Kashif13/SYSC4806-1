@@ -87,7 +87,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | (Wednesday) 21st March, 2018 |
 | End Date | (Wednesday) 21st March, 2018 |
 
-| Story | [As a User, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555) |
+| Story | [As an Admin, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555) |
 | ------ | ------ |
 | Story Number | 12 |
 | Size Estimate | S |
@@ -97,7 +97,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Start Date | (Monday) 2nd April, 2018 |
 | End Date | (Tuesday) 3rd April, 2018 |
 
-| Story | [As a User, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554) |
+| Story | [As an Admin, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554) |
 | ------ | ------ |
 | Story Number | 11 |
 | Size Estimate | S |
