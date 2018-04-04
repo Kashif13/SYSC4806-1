@@ -68,4 +68,10 @@ public class HttpRequestTest {
                 String.class)).contains("Programs");
     }
 
+    @Test
+    public void listCoursesByCategoryRequestShouldReturnList() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listCoursesByCategory?id=1",
+                String.class)).contains("Courses");
+    }
+
 }
