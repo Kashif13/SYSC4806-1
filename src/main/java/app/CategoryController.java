@@ -19,7 +19,7 @@ public class CategoryController {
 
     @RequestMapping("/pickCategory")
     public String pickCategory(Model model){
-        val category = new Category();
+        Category category = new Category();
         model.addAttribute("category", category);
         model.addAttribute("categories", categoryRepo.findAll());
         return "pickCategory";
@@ -35,14 +35,14 @@ public class CategoryController {
 
     @GetMapping("/addCategory")
     public String categoryForm(Model model){
-        val category = new Category();
+        Category category = new Category();
         model.addAttribute("category", category);
         return "categoryForm";
     }
 
     @PostMapping("/addCategory")
     public String categorySubmit(@ModelAttribute("category") Category category, Model model) {
-        val c = categoryRepo.save(category);
+        Category c = categoryRepo.save(category);
         model.addAttribute("categories", categoryRepo.findAll());
         model.addAttribute("newCategory", c);
         return "listCategories";
