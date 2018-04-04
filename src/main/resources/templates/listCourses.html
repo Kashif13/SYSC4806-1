@@ -18,15 +18,18 @@
     <tr th:each="course : ${courses}">
         <div class="card">
             <div class="card-block">
+                <p th:if="${(newCourse != null) and (course.id == newCourse.id)}">*Newly Added Course*</p>
                 <h4 class="card-title" th:text="${course.name}">1</h4>
-                <p>Description: </p><p class="card-text" th:text="${course.description}">Title ...</p>
+                <p>Description: </p><p class="card-text" th:text="${course.description}">Description ...</p>
+                <p class="card-text" th:text="${course.year.toString()}">Year ...</p>
                 <br/>
             </div>
         </div>
     </tr>
     <br/>
-
-    <input class="btn btn-warning" type="button"  onclick="location.href='/addNewCourse'" value="Add a new course" />
+    <p>
+        <input class="btn btn-warning" id="newCourse" type="button"  onclick="location.href='/newCourse'" value="Add a new course" />
+    </p>
 </div>
 </body>
 

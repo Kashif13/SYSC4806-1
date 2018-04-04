@@ -24,6 +24,16 @@ public class CourseController {
     @Autowired
     private CategoryRepository categoryRepo;
 
+
+
+    @RequestMapping("/pickCourse")
+    public String pickCourse(Model model){
+        Course course = new Course();
+        model.addAttribute("course", course);
+        model.addAttribute("courses", courseRepo.findAll());
+        return "pickCourse";
+    }
+
     @RequestMapping("/listCourses")
     public String listCourses(Model model){
         model.addAttribute("courses", courseRepo.findAll());
@@ -40,11 +50,35 @@ public class CourseController {
         return "listCourses";
     }
 
-    @GetMapping("/addNewCourse")
-    public String newCourseForm(Model model){
-        Course course= new Course();
+    @GetMapping("/newCourse")
+    public String newCourse(Model model){
+        ArrayList years = new ArrayList();
+        for(int i=0; i < AcademicYear.values().length; i++) {
+            years.add(AcademicYear.values()[i].toString());
+        }
+        Course course = new Course();
+
+        model.addAttribute("courseAndYear", new CourseAndYearForm());
         model.addAttribute("course", course);
+        model.addAttribute("years", years);
         return "newCourseForm";
+    }
+
+    @PostMapping("/createCourse")
+    public String createCourse(@ModelAttribute("courseAndYear") CourseAndYearForm course, Model model){
+        AcademicYear year = null;
+        for(int i=0; i < AcademicYear.values().length; i++) {
+            if(AcademicYear.values()[i].toString().equals(course.getYear())){
+                year = AcademicYear.values()[i];
+            }
+        }
+        Course currentCourse = course.getCourse();
+        currentCourse.setYear(year);
+
+        Course c = courseRepo.save(currentCourse);
+        model.addAttribute("courses", courseRepo.findAll());
+        model.addAttribute("newCourse", c);
+        return "listCourses";
     }
 
     @PostMapping("/displayLearningOutcomesForCourse")
