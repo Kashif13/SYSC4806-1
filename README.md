@@ -94,7 +94,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Details | The User should be able to access a form where she can fill details about a Course name, description and academic year and add it to the list of available courses. |
 |Acceptance Criteria | Create form and follow up 'success!' page. |
 | Assigned to | Muhammad Siddiqui |
-| Start Date | - |
+| Start Date | (Monday) 2nd April, 2018 |
 | End Date | - |
 
 | Story | [As a User, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555) |
@@ -104,7 +104,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Details | The User should be able to access a form where she can fill details about a Program name and description and add it to the list of available programs. |
 |Acceptance Criteria | Create form and follow up 'success!' page. |
 | Assigned to | Himanish Kaushal  |
-| Start Date | - |
+| Start Date | (Monday) 2nd April, 2018 |
 | End Date | - |
 
 
