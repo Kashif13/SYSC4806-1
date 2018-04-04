@@ -15,17 +15,28 @@
     <div class="page-header">
         <h1>Categories</h1>
     </div>
-    <form class="form-inline" th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
-
-                <p>Pick Category to filter Learning Outcomes:
-                    <select class="form-control" th:field="*{id}">
-                        <option th:each="cat : ${categories}"
-                                th:value="${cat.id}"
-                                th:utext="${cat.name}"/>
-                    </select>
-                    <input class="btn btn-warning" name="submit" type="submit" />
-                </p>
-    </form>
+    <div class="col-md-6">
+        <h4>Filter Learning Outcomes by Category:</h4>
+        <form class="form-inline" th:action="@{/listLearningOutcomesByCategory}" th:object="${category}" method='GET'>
+            <select class="form-control" th:field="*{id}">
+                <option th:each="cat : ${categories}"
+                        th:value="${cat.id}"
+                        th:utext="${cat.name}"/>
+            </select>
+            <input class="btn btn-warning" name="submit" type="submit" />
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h4>Filter Courses by Category:</h4>
+        <form class="form-inline" th:action="@{/listCoursesByCategory}" th:object="${category}" method='GET'>
+            <select class="form-control" th:field="*{id}">
+                <option th:each="cat : ${categories}"
+                        th:value="${cat.id}"
+                        th:utext="${cat.name}"/>
+            </select>
+            <input class="btn btn-warning" name="submit" type="submit" />
+        </form>
+    </div>
     <hr/>
     <input class="btn btn-warning" type="button"  onclick="location.href='/listCategories'" value="List All Categories" />
     <input class="btn btn-warning" type="button"  onclick="location.href='/'" value="Home" />
