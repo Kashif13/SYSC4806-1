@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/checkIfAllowed.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
     <link rel="stylesheet" href="base.css"></link>
 </head>
@@ -25,8 +26,8 @@
                 </div>
             </tr>
             <br/>
-
-    <input class="btn btn-warning" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+        <div id="user" th:text="${user.username}" class="hidden"></div>
+    <input id="addLo" class="btn btn-warning" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
     </div>
 </body>
 
