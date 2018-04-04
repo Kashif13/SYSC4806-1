@@ -46,8 +46,10 @@ public class HttpRequestTest {
 
     @Test
     public void pickCategoryRequestShouldReturnList() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/pickCategory",
-                String.class)).contains("Pick Category to filter Learning Outcomes:");
+        String response = this.restTemplate.getForObject("http://localhost:" + port + "/pickCategory",
+                String.class);
+        assertThat(response).contains("Filter Learning Outcomes by Category:");
+        assertThat(response).contains("Filter Courses by Category:");
     }
 
     @Test
