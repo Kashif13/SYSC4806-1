@@ -121,7 +121,7 @@ public class ProgramController {
 
     @GetMapping("/editProgram/{programId}")
     public String editProgram(@PathVariable Long programId, Model model){
-        Program program = programRepo.findById(programId);
+        Program program = programRepo.findOne(programId);
         model.addAttribute("program", program);
         return "editProgramForm";
     }

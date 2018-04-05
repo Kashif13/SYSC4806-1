@@ -50,7 +50,7 @@ public class CategoryController {
 
     @GetMapping("/editCategory/{categoryId}")
     public String editCategory(@PathVariable Long categoryId, Model model){
-        Category category = categoryRepo.findById(categoryId);
+        Category category = categoryRepo.findOne(categoryId);
         model.addAttribute("category", category);
         return "editCategoryForm";
     }
