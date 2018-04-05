@@ -67,10 +67,12 @@ public class Application {
             courseRepo.save(course2);
             for(LearningOutcome lo : learningOutcomes1){
                 lo.setCourse(course1);
+                lo.setCategory(c1);
                 loRepo.save(lo);
             }
             for(LearningOutcome lo : learningOutcomes2){
                 lo.setCourse(course2);
+                lo.setCategory(c1);
                 loRepo.save(lo);
             }
             progRepo.save(p1);
