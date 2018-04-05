@@ -56,11 +56,11 @@ public class HttpRequestTest {
                 String.class)).contains("Add Learning Outcome:");
     }
 
-    @Test
-    public void listCategoriesRequestShouldReturnList() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listCategories",
-                String.class)).contains("All Categories");
-    }
+//    @Test
+//    public void listCategoriesRequestShouldReturnList() throws Exception {
+//        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listCategories",
+//                String.class)).contains("All Categories");
+//    }
 
     @Test
     public void pickCategoryRequestShouldReturnList() throws Exception {
@@ -82,11 +82,11 @@ public class HttpRequestTest {
                 String.class)).contains("Learning Outcomes");
     }
 
-    @Test
-    public void listProgramsShouldContainProgramsList() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listPrograms",
-                String.class)).contains("Programs");
-    }
+//    @Test
+//    public void listProgramsShouldContainProgramsList() throws Exception {
+//        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listPrograms",
+//                String.class)).contains("Programs");
+//    }
 
     @Test
     public void listCoursesByCategoryRequestShouldReturnList() throws Exception {

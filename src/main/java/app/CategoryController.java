@@ -26,8 +26,9 @@ public class CategoryController {
     }
 
     @RequestMapping("/listCategories")
-    public String listCategories(@RequestParam(value = "newCategory", required = false) Category newCategory,  Model model){
+    public String listCategories(@SessionAttribute("user") User user, @RequestParam(value = "newCategory", required = false) Category newCategory,  Model model){
         model.addAttribute("categories", categoryRepo.findAll());
+        model.addAttribute("user", user);
         if (newCategory != null)
             model.addAttribute("newCategory", newCategory);
         return "listCategories";
