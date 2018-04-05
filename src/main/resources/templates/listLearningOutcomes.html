@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/checkIfAllowed.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
     <link rel="stylesheet" href="base.css"></link>
 </head>
@@ -18,6 +19,7 @@
             <tr th:each="learningOutcome : ${learningOutcomes}">
                 <div class="card">
                     <div class="card-block">
+                        <p th:if="${(newLearningOutcome != null) and (learningOutcome.id == newLearningOutcome.id)}">*Newly Added Learning Outcome*</p>
                         <h4 class="card-title" th:text="${learningOutcome.name}">1</h4>
                         <p>Description: </p><p class="card-text" th:text="${learningOutcome.description}">Title ...</p>
                         <br/>
@@ -26,7 +28,10 @@
             </tr>
             <br/>
 
-    <input class="btn btn-warning" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+      <div id="user" th:text="${user.username}" class="hidden"></div>
+      <p>
+          <input id="addLo" class="btn btn-warning" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+      </p>
     </div>
 </body>
 

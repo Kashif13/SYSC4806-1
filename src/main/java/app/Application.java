@@ -25,34 +25,18 @@ public class Application {
 
 
     @Bean
-    public CommandLineRunner demo(LearningOutcomeRepository loRepo, ProgramRepository progRepo, CourseRepository courseRepo, CategoryRepository catRepo) {
+    public CommandLineRunner demo(UserRepository userRepository, LearningOutcomeRepository loRepo, ProgramRepository progRepo, CourseRepository courseRepo, CategoryRepository catRepo) {
         return (args) -> {
+
+            userRepository.save(new User("admin", "password"));
+            userRepository.save(new User("user", "password"));
+
             // save a few categories with descriptions
             catRepo.save(new Category("Design", "Should have good designing abilities."));
             catRepo.save(new Category("Communication", "Should have good communication skills."));
 
-            // fetch all categories
-            log.info("Categories found with findAll():");
-            log.info("-------------------------------");
-            for (Category c : catRepo.findAll()) {
-                log.info(c.toString());
-            }
-            log.info("");
-
             // fetch an individual learning outcome by ID
             Category c1 = catRepo.findOne(1L);
-            log.info("Category found with findOne(1L):");
-            log.info("--------------------------------");
-            log.info(c1.toString());
-            log.info("");
-
-            // fetch categories of name "Communication"
-            log.info("Categories found with findByName('Communication'):");
-            log.info("--------------------------------------------");
-            for (Category cats : catRepo.findByName("Communication")) {
-                log.info(cats.toString());
-            }
-            log.info("");
 
             // save a couple of learning outcomes
             List<LearningOutcome> learningOutcomes1 = new ArrayList<LearningOutcome>();
@@ -93,28 +77,8 @@ public class Application {
             progRepo.save(p2);
             progRepo.save(p3);
 
-            // fetch all programs
-            log.info("Programs found with findAll():");
-            log.info("-------------------------------");
-            for (Program p : progRepo.findAll()) {
-                log.info(p.toString());
-            }
-            log.info("");
-
             // fetch an individual learning outcome by ID
             Program ptest = progRepo.findOne(1L);
-            log.info("Program found with findOne(1L):");
-            log.info("--------------------------------");
-            log.info(ptest.toString());
-            log.info("");
-
-            // fetch programs of name "Software Engineering"
-            log.info("Programs found with findByName('Software Engineering'):");
-            log.info("--------------------------------------------");
-            for (Program progs : progRepo.findByName("Software Engineering")) {
-                log.info(progs.toString());
-            }
-            log.info("");
         };
     }
 }

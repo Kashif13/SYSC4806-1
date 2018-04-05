@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learning Outcomes Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="base.css"></link>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="navbar-brand">
+            Learning Outcomes Manager
+        </div>
+    </nav>
+    <div class="login">
+        <h1>Welcome !</h1>
+        <form  id="loginForm"  action="#" th:action="@{/login}" th:object="${user}" method="post">
+            <input name="u" placeholder="Username" required="required" id="username" type="text" th:field="*{username}" />
+            <input name="p" placeholder="Password" required="required" id="password" type="text" th:field="*{password}" />
+            <button id="submit" class="btn btn-warning" type="submit">Login</button>
+        </form>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import app.LearningOutcomeRepository;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -28,8 +29,9 @@ public class LearningOutcomeController {
     }
 
     @RequestMapping("/listLearningOutcomes")
-    public String listLearningOutcomes(Model model){
+    public String listLearningOutcomes(@SessionAttribute("user") User user, Model model){
         model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
+        model.addAttribute("user", user);
         return "listLearningOutcomes";
     }
 
@@ -53,8 +55,10 @@ public class LearningOutcomeController {
     }
 
     @PostMapping("/addLearningOutcome")
-    public String learningOutcomeSubmit(@ModelAttribute("learningOutcome") LearningOutcome learningOutcome) {
-        learningOutcomeRepo.save(learningOutcome);
-        return "loResult";
+    public String learningOutcomeSubmit(@ModelAttribute("learningOutcome") LearningOutcome learningOutcome, Model model) {
+        LearningOutcome lo = learningOutcomeRepo.save(learningOutcome);
+        model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
+        model.addAttribute("newLearningOutcome", lo);
+        return "listLearningOutcomes";
     }
 }
