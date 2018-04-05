@@ -77,14 +77,15 @@ public class CourseController {
 
         for(Program p : programRepo.findByName(course.getProgram().toString())){
             p.addCourse(currentCourse);
+            currentCourse.addProgram(p);
             programRepo.save(p);
         }
 
-        Course c = courseRepo.save(currentCourse);
+//        Course c = courseRepo.save(currentCourse);
 //        Program p = programRepo.findOne(course.getProgram().getId());
 //        p.addCourse(c);
         model.addAttribute("courses", courseRepo.findAll());
-        model.addAttribute("newCourse", c);
+        model.addAttribute("newCourse", currentCourse);
         return "listCourses";
     }
 
