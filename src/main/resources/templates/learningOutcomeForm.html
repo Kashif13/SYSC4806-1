@@ -17,9 +17,25 @@
         <div class="page-header">
             <h3> Add Learning Outcome:</h3>
         </div>
-        <form class="form" id="loForm"  action="#" th:action="@{/addLearningOutcome}" th:object="${learningOutcome}" method="post">
-            <p class="form-group"><label>Name: </label><input class="form-control" id="name" type="text" th:field="*{name}" /></p>
-            <p class="form-group"><label>Description: </label><input class="form-control" id="description" type="text" th:field="*{description}" /></p>
+        <form class="form" id="loForm"  action="#" th:action="@{/addLearningOutcome}" th:object="${learningOutcomeForm}" method="post">
+            <p class="form-group"><label>Name: </label><input class="form-control" id="name" type="text" th:field="*{learningOutcome.name}" /></p>
+            <p class="form-group"><label>Description: </label><input class="form-control" id="description" type="text" th:field="*{learningOutcome.description}" /></p>
+            <p class="form-group">
+                <label>Course:</label>
+                <select class="form-control" th:field="*{course}">
+                    <option th:each="course : ${courses}"
+                            th:value="${course.id}" th:text="${course.name}">
+                    </option>
+                </select>
+            </p>
+            <p class="form-group">
+                <label>Category:</label>
+                <select class="form-control" th:field="*{category}">
+                    <option th:each="category : ${categories}"
+                            th:value="${category.id}" th:text="${category.name}">
+                    </option>
+                </select>
+            </p>
             <br/>
             <p>
                 <input class="btn btn-warning" id="submit" type="submit" value="Submit"/>
