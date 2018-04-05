@@ -73,19 +73,15 @@ public class CourseController {
             }
         }
         Course currentCourse = new Course(course.getCourse().getName(), course.getCourse().getDescription(), year);
-        //currentCourse.setYear(year);
 
         for(Program p : programRepo.findByName(course.getProgram().toString())){
             p.addCourse(currentCourse);
             currentCourse.addProgram(p);
-            programRepo.save(p);
         }
 
-//        Course c = courseRepo.save(currentCourse);
-//        Program p = programRepo.findOne(course.getProgram().getId());
-//        p.addCourse(c);
+        Course c = courseRepo.save(currentCourse);
         model.addAttribute("courses", courseRepo.findAll());
-        model.addAttribute("newCourse", currentCourse);
+        model.addAttribute("newCourse", c);
         return "listCourses";
     }
 
