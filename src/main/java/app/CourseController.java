@@ -34,17 +34,19 @@ public class CourseController {
     }
 
     @RequestMapping("/listCourses")
-    public String listCourses(Model model){
+    public String listCourses(@SessionAttribute("user") User user, Model model){
+        model.addAttribute("user", user);
         model.addAttribute("courses", courseRepo.findAll());
         return "listCourses";
     }
 
     @RequestMapping("/listCoursesByCategory")
-    public String listCoursesByCategory(@ModelAttribute("category") Category category, Model model){
+    public String listCoursesByCategory(@SessionAttribute("user") User user, @ModelAttribute("category") Category category, Model model){
         List<LearningOutcome> los = loRepo.findByCategory(category);
         List<Course> courses = new ArrayList<>();
         for(LearningOutcome lo : los)
             courses.add(lo.getCourse());
+        model.addAttribute("user", user);
         model.addAttribute("courses", courses);
         return "listCourses";
     }
@@ -65,7 +67,7 @@ public class CourseController {
     }
 
     @PostMapping("/createCourse")
-    public String createCourse(@ModelAttribute("courseAndYear") CourseAndYearForm course, Model model){
+    public String createCourse(@SessionAttribute("user") User user, @ModelAttribute("courseAndYear") CourseAndYearForm course, Model model){
         AcademicYear year = null;
         for(int i=0; i < AcademicYear.values().length; i++) {
             if(AcademicYear.values()[i].toString().equals(course.getYear())){
@@ -80,15 +82,17 @@ public class CourseController {
         }
 
         Course c = courseRepo.save(currentCourse);
+        model.addAttribute("user", user);
         model.addAttribute("courses", courseRepo.findAll());
         model.addAttribute("newCourse", c);
         return "listCourses";
     }
 
     @PostMapping("/displayLearningOutcomesForCourse")
-    public String displayLearningOutcomesForCourse(@ModelAttribute("course")Course course, BindingResult p, Model m) {
+    public String displayLearningOutcomesForCourse(@SessionAttribute("user") User user, @ModelAttribute("course")Course course, BindingResult p, Model m) {
 
         List<LearningOutcome> finalizedListoflearningOutcomes = loRepo.findByCourse(course);
+        m.addAttribute("user", user);
         m.addAttribute("learningOutcomes", finalizedListoflearningOutcomes);
         m.addAttribute("learningOutcome", new LearningOutcome());
         return "displayLearningOutcomesForCourse";
@@ -112,7 +116,7 @@ public class CourseController {
     }
 
     @PostMapping("/updateCourse/{courseId}")
-    public String updateProgram(@PathVariable Long courseId, @ModelAttribute("courseAndYear") CourseAndYearForm course, Model model) {
+    public String updateProgram(@SessionAttribute("user") User user, @PathVariable Long courseId, @ModelAttribute("courseAndYear") CourseAndYearForm course, Model model) {
         AcademicYear year = null;
         for(int i=0; i < AcademicYear.values().length; i++) {
             if(AcademicYear.values()[i].toString().equals(course.getYear())){
@@ -124,6 +128,7 @@ public class CourseController {
         currentCourse.setId(courseId);
 
         Course updatedCourse = courseRepo.save(currentCourse);
+        model.addAttribute("user", user);
         model.addAttribute("courses", courseRepo.findAll());
         model.addAttribute("updatedCourse", updatedCourse);
         return "listCourses";
