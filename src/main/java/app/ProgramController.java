@@ -23,8 +23,9 @@ public class ProgramController {
 
 
     @RequestMapping("/listPrograms")
-    public String listPrograms(Model model){
+    public String listPrograms(@SessionAttribute("user") User user, Model model){
         model.addAttribute("programs", programRepo.findAll());
+        model.addAttribute("user", user);
         return "listPrograms";
     }
 
