@@ -1,0 +1,40 @@
+body{
+    font-family: 'Lato', sans-serif;
+    background: #353535;
+}
+
+.navbar-default{
+    background-color: #353535;
+    padding: 1em;
+}
+
+h1, h2, h3, h4, p, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a, span.alert {
+     color: whitesmoke;
+}
+
+.navbar-default .navbar-brand{
+    font-size: 30px;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: whitesmoke;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: #F7CA18;
+}
+
+#username, #password{
+    display: block;
+}
+
+#username, #password{
+    margin: 2em 0;
+    width: 50%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+

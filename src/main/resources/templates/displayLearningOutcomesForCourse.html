@@ -7,13 +7,15 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="base.css"></link>
+    <script type="text/javascript" src="hideEdit.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="page-header">
         <h1>Learning Outcomes</h1>
     </div>
-
+    <div id="user" th:text="${user.username}" class="hidden"></div>
     <tr th:each="learningOutcome : ${learningOutcomes}">
         <div class="card">
             <div class="card-block">
@@ -24,8 +26,10 @@
         </div>
     </tr>
     <br/>
-
-    <input type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+    <p>
+        <input class="btn btn-warning edit" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+        <input class="btn btn-warning" type="button"  onclick="location.href='/home'" value="Home" />
+    </p>
     <br/>
 </div>
 </body>

@@ -1,5 +1,7 @@
 package app;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.List;
  * Created by Faisal on 2018-03-20.
  */
 @Entity
+@Data
 public class Course {
 
     @Id
@@ -103,28 +106,6 @@ public class Course {
      * @param los - learning outcome to be removed
      */
     public void removeLearningOutcome(LearningOutcome los){ this.learningOutcomes.remove(los); }
-
-    /** Getters **/
-    public Long getId() {
-        return id;
-    }
-    public String getDescription() { return description; }
-    public String getName() { return name; }
-    public AcademicYear getYear() {return year; }
-    public List<Program> getPrograms() { return programs; };
-    public List<LearningOutcome> getLearningOutcomes() { return learningOutcomes; };
-
-
-
-    /** Setters **/
-    public void setId(Long objectiveId) {
-        this.id = objectiveId;
-    }
-    public void setDescription(String desc) { this.description = desc; }
-    public void setName(String name) { this.name = name; }
-    public void setYear(AcademicYear year) {this.year = year; }
-    public void setPrograms(List<Program> progs) {this.programs = progs; }
-    public void setLearningOutcomes(List<LearningOutcome> los) {this.learningOutcomes = los; }
 
 
     /**

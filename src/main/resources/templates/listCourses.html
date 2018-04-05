@@ -7,25 +7,33 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="/base.css"></link>
+    <script type="text/javascript" src="hideEdit.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="page-header">
         <h1>Courses</h1>
     </div>
-
+    <div id="user" th:text="${user.username}" class="hidden"></div>
     <tr th:each="course : ${courses}">
         <div class="card">
             <div class="card-block">
+                <a class="btn btn-warning btn-sm edit" th:href="@{/editCourse/{id}(id=${course.id})}">Edit</a>
+                <p th:if="${(newCourse != null) and (course.id == newCourse.id)}">*Newly Added Course*</p>
+                <span class="alert" th:if="${(updatedCourse != null) and (course.id == updatedCourse.id)}">*Updated Course*</span>
                 <h4 class="card-title" th:text="${course.name}">1</h4>
-                <p>Description: </p><p class="card-text" th:text="${course.description}">Title ...</p>
+                <p>Description: </p><p class="card-text" th:text="${course.description}">Description ...</p>
+                <p class="card-text" th:text="${course.year.toString()}">Year ...</p>
                 <br/>
             </div>
         </div>
     </tr>
     <br/>
-
-    <input type="button"  onclick="location.href='/addNewCourse'" value="Add a new course" />
+    <p>
+        <input class="btn btn-warning edit" id="newCourse" type="button"  onclick="location.href='/newCourse'" value="Add a new course" />
+        <input class="btn btn-warning" type="button"  onclick="location.href='/home'" value="Home" />
+    </p>
 </div>
 </body>
 

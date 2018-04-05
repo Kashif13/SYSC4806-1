@@ -1,11 +1,14 @@
 package app;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
 public class Program {
 
     @Id
@@ -63,23 +66,6 @@ public class Program {
      * @param course - Course to be removed
      */
     public void removeCourse(Course course){ this.courses.remove(course); }
-
-
-    /** Getters **/
-    public Long getId() {
-        return id;
-    }
-    public String getDescription() { return description; }
-    public String getName() { return name; }
-    public List<Course> getCourse() { return courses; }
-
-    /** Setters **/
-    public void setId(Long objectiveId) {
-        this.id = objectiveId;
-    }
-    public void setDescription(String desc) { this.description = desc; }
-    public void setName(String name) { this.name = name; }
-    public void setCourses(List<Course> courses) { this.courses = courses; }
 
 
     /**

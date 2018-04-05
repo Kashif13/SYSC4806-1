@@ -7,27 +7,35 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="/base.css" />
+    <link rel="stylesheet" href="category.css" />
+    <script type="text/javascript" src="hideEdit.js"></script>
+
 </head>
 <body>
 <div class="container">
     <div class="page-header">
         <h1>All Categories</h1>
     </div>
-
+    <div id="user" th:text="${user.username}" class="hidden"></div>
     <tr th:each="category : ${categories}">
         <div class="card">
             <div class="card-block">
-                <h4 class="card-title" th:text="${category.name}">1</h4><strong th:if="${(newCategory != null) and (category.id == newCategory.id)}">*New*</strong>
-                <p>Description: </p><p class="card-text" th:text="${category.description}">Title ...</p>
+                <a class="btn btn-warning btn-sm edit" th:href="@{/editCategory/{id}(id=${category.id})}">Edit</a>
+                <span th:if="${(newCategory != null) and (category.id == newCategory.id)}">*Newly Added Category*</span>
+                <span class="alert" th:if="${(updatedCategory != null) and (category.id == updatedCategory.id)}">*Updated Category*</span>
+                <h4 class="card-title" th:text="${category.name}">1</h4>
+                <p>Description: </p><p class="card-text" th:text="${category.description}">Description ...</p>
                 <br/>
             </div>
         </div>
     </tr>
     <br/>
-
-    <input type="button"  onclick="location.href='/addCategory'" value="Add a new category" />
-    <hr/>
-    <a href="/pickCategory">Pick Category to Filter Learning Outcomes</a>
+    <p>
+        <input class="btn btn-warning edit" type="button"  onclick="location.href='/addCategory'" value="Add a new category" />
+        <a class="btn btn-warning" href="/pickCategory">Pick Category to Filter Learning Outcomes</a>
+        <input class="btn btn-warning" type="button"  onclick="location.href='/home'" value="Home" />
+    </p>
 </div>
 </body>
 
