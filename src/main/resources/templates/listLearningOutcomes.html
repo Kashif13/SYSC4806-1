@@ -8,7 +8,7 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/checkIfAllowed.js"></script>
     <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
-    <link rel="stylesheet" href="base.css"></link>
+    <link rel="stylesheet" href="/base.css"></link>
 </head>
 <body>
     <div class="container">
@@ -19,7 +19,9 @@
             <tr th:each="learningOutcome : ${learningOutcomes}">
                 <div class="card">
                     <div class="card-block">
-                        <p th:if="${(newLearningOutcome != null) and (learningOutcome.id == newLearningOutcome.id)}">*Newly Added Learning Outcome*</p>
+                        <a class="btn btn-warning btn-sm" th:href="@{/editLearningOutcome/{id}(id=${learningOutcome.id})}">Edit</a>
+                        <span class="alert" th:if="${(newLearningOutcome != null) and (learningOutcome.id == newLearningOutcome.id)}">*Newly Added Learning Outcome*</span>
+                        <span class="alert" th:if="${(updatedLearningOutcome != null) and (learningOutcome.id == updatedLearningOutcome.id)}">*Updated*</span>
                         <h4 class="card-title" th:text="${learningOutcome.name}">1</h4>
                         <p>Description: </p><p class="card-text" th:text="${learningOutcome.description}">Title ...</p>
                         <br/>

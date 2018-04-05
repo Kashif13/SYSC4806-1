@@ -10,4 +10,5 @@ public interface LearningOutcomeRepository extends CrudRepository<LearningOutcom
     List<LearningOutcome> findByName(String name);
     List<LearningOutcome> findByCategory (Category category);
     List<LearningOutcome> findByCourse (Course course);
+    LearningOutcome findById(Long id);
 }

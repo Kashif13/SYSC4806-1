@@ -61,4 +61,20 @@ public class LearningOutcomeController {
         model.addAttribute("newLearningOutcome", lo);
         return "listLearningOutcomes";
     }
+
+    @GetMapping("/editLearningOutcome/{id}")
+    public String editLearningOutcome(@PathVariable Long id, Model model){
+        LearningOutcome learningOutcome = learningOutcomeRepo.findById(id);
+        model.addAttribute("learningOutcome", learningOutcome);
+        return "editLearningOutcomeForm";
+    }
+
+    @PostMapping("/updateLearningOutcome/{id}")
+    public String updateLearningOutcome(@PathVariable Long id, @ModelAttribute("learningOutcome") LearningOutcome learningOutcome, Model model) {
+        learningOutcome.setId(id);
+        LearningOutcome updatedLearningOutcome = learningOutcomeRepo.save(learningOutcome);
+        model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
+        model.addAttribute("updatedLearningOutcome", updatedLearningOutcome);
+        return "listLearningOutcomes";
+    }
 }
