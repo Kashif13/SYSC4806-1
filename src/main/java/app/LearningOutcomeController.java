@@ -77,6 +77,9 @@ public class LearningOutcomeController {
         lo.setCategory(learningOutcomeForm.getCategory());
         LearningOutcome newLearningOutcome = learningOutcomeRepo.save(lo);
 
+        learningOutcomeForm.getCourse().addLearningOutcome(newLearningOutcome);
+        learningOutcomeForm.getCategory().addLearningOutcome(newLearningOutcome);
+
         model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
         model.addAttribute("newLearningOutcome", newLearningOutcome);
 
@@ -110,13 +113,39 @@ public class LearningOutcomeController {
 
     @PostMapping("/updateLearningOutcome/{id}")
     public String updateLearningOutcome(@PathVariable Long id, @ModelAttribute("learningOutcomeForm") LearningOutcomeForm learningOutcomeForm, Model model) {
-        LearningOutcome learningOutcome = learningOutcomeForm.getLearningOutcome();
-        learningOutcome.setId(id);
-        learningOutcome.setCourse(learningOutcomeForm.getCourse());
-        learningOutcome.setCategory(learningOutcomeForm.getCategory());
-        LearningOutcome updatedLearningOutcome = learningOutcomeRepo.save(learningOutcome);
+        LearningOutcome learningOutcomeFromForm = learningOutcomeForm.getLearningOutcome();
+        learningOutcomeFromForm.setId(id);
+        learningOutcomeFromForm.setCourse(learningOutcomeForm.getCourse());
+        learningOutcomeFromForm.setCategory(learningOutcomeForm.getCategory());
+
+        LearningOutcome existingLearningOutcome = learningOutcomeRepo.findOne(id);
+
+        if(existingLearningOutcome.getCourse() != learningOutcomeForm.getCourse()) {
+            // remove lo from old course and it to new course
+            Course oldCourse = existingLearningOutcome.getCourse();
+            oldCourse.removeLearningOutcome(existingLearningOutcome);
+            courseRepo.save(oldCourse);
+
+            Course newCourse = learningOutcomeFromForm.getCourse();
+            newCourse.addLearningOutcome(learningOutcomeFromForm);
+            courseRepo.save(newCourse);
+        }
+        if(existingLearningOutcome.getCategory() != learningOutcomeForm.getCategory()) {
+            // remove lo from old category and add it to new category
+            Category oldCategory = existingLearningOutcome.getCategory();
+            oldCategory.removeLearningOutcome(existingLearningOutcome);
+            categoryRepo.save(oldCategory);
+
+            Category newCategory = learningOutcomeFromForm.getCategory();
+            newCategory.addLearningOutcome(learningOutcomeFromForm);
+            categoryRepo.save(newCategory);
+        }
+
+        LearningOutcome updatedLearningOutcome = learningOutcomeRepo.save(learningOutcomeFromForm);
+
         model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
         model.addAttribute("updatedLearningOutcome", updatedLearningOutcome);
+
         return "listLearningOutcomes";
     }
 }
