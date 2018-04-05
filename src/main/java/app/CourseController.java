@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +85,41 @@ public class CourseController {
         m.addAttribute("learningOutcomes", finalizedListoflearningOutcomes);
         m.addAttribute("learningOutcome", new LearningOutcome());
         return "displayLearningOutcomesForCourse";
+    }
+
+    @GetMapping("/editCourse/{courseId}")
+    public String editCategory(@PathVariable Long courseId, Model model){
+        ArrayList years = new ArrayList();
+        for(int i=0; i < AcademicYear.values().length; i++) {
+            years.add(AcademicYear.values()[i].toString());
+        }
+
+        Course course = courseRepo.findOne(courseId);
+        CourseAndYearForm courseAndYear = new CourseAndYearForm();
+        courseAndYear.setCourse(course);
+
+        model.addAttribute("courseAndYear", courseAndYear);
+        model.addAttribute("course", course);
+        model.addAttribute("years", years);
+        return "editCourseForm";
+    }
+
+    @PostMapping("/updateCourse/{courseId}")
+    public String updateProgram(@PathVariable Long courseId, @ModelAttribute("courseAndYear") CourseAndYearForm course, Model model) {
+        AcademicYear year = null;
+        for(int i=0; i < AcademicYear.values().length; i++) {
+            if(AcademicYear.values()[i].toString().equals(course.getYear())){
+                year = AcademicYear.values()[i];
+            }
+        }
+        Course currentCourse = course.getCourse();
+        currentCourse.setYear(year);
+        currentCourse.setId(courseId);
+
+        Course updatedCourse = courseRepo.save(currentCourse);
+        model.addAttribute("courses", courseRepo.findAll());
+        model.addAttribute("updatedCourse", updatedCourse);
+        return "listCourses";
     }
 
 }

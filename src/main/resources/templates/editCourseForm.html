@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Edit Course</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/base.css" />
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h3> Update Course:</h3>
+        </div>
+        <form class="form" id="courseForm"  action="#" th:action="@{/updateCourse/{id}(id=${course.id.toString()})}" th:object="${courseAndYear}" th:method="POST">
+            <p class="form-group"><label>Name: </label><input class="form-control" id="name" type="text" th:field="*{course.name}" /></p>
+            <p class="form-group"><label>Description: </label><input class="form-control" id="description" type="text" th:field="*{course.description}" /></p>
+            <p>Year:
+                <select class="form-control" th:field="*{year}">
+                    <option th:each="year : ${years}"
+                            th:value="${year}" th:text="${year}">
+                    </option>
+                </select>
+            </p>
+            <br/>
+            <p>
+                <input class="btn btn-warning" id="submit" type="submit" value="Submit"/>
+                <input class="btn btn-warning" type="reset" value="Reset" />
+                <input class="btn btn-warning" type="button"  onclick="location.href='/listCourses'" value="View All Courses" />
+                <input class="btn btn-warning" type="button"  onclick="location.href='/home'" value="Home" />
+            </p>
+        </form>
+        <div id="success"></div>
+    </div>
+</div>
+</body>
+
+</html>
