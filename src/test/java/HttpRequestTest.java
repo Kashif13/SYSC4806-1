@@ -44,11 +44,6 @@ public class HttpRequestTest {
                 String.class)).contains("Learning Outcomes Manager");
     }
 
-//    @Test
-//    public void listLearningOutcomesRequestShouldReturnList() throws Exception {
-//        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listLearningOutcomes",
-//                String.class)).contains("Learning Outcomes");
-//    }
 
     @Test
     public void addLearningOutcomeRequestShouldReturnForm() throws Exception {
@@ -56,11 +51,6 @@ public class HttpRequestTest {
                 String.class)).contains("Add Learning Outcome:");
     }
 
-//    @Test
-//    public void listCategoriesRequestShouldReturnList() throws Exception {
-//        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listCategories",
-//                String.class)).contains("All Categories");
-//    }
 
     @Test
     public void pickCategoryRequestShouldReturnList() throws Exception {
@@ -82,11 +72,6 @@ public class HttpRequestTest {
                 String.class)).contains("Learning Outcomes");
     }
 
-//    @Test
-//    public void listProgramsShouldContainProgramsList() throws Exception {
-//        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/listPrograms",
-//                String.class)).contains("Programs");
-//    }
 
     @Test
     public void listCoursesByCategoryRequestShouldReturnList() throws Exception {
@@ -98,6 +83,42 @@ public class HttpRequestTest {
     public void editLearningOutcomeShouldReturnForm() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/editLearningOutcome/1",
                 String.class)).contains("Update Learning Outcome:");
+    }
+
+    @Test
+    public void editCategoryShouldReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/editCategory/1",
+                String.class)).contains("Update Category:");
+    }
+
+    @Test
+    public void editCourseReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/editCourse/1",
+                String.class)).contains("Update Course:");
+    }
+
+    @Test
+    public void editProgramReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/editProgram/1",
+                String.class)).contains("Update Program:");
+    }
+
+    @Test
+    public void addCourseShouldReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/newCourse",
+                String.class)).contains("Add Course:");
+    }
+
+    @Test
+    public void addProgramShouldReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/newProgram",
+                String.class)).contains("Add Program:");
+    }
+
+    @Test
+    public void addLearningOutcomeShouldReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/addLearningOutcome",
+                String.class)).contains("Add Learning Outcome:");
     }
 
 }

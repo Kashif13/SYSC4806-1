@@ -45,7 +45,7 @@ public class ProgramController {
     }
 
     @PostMapping("/displayCourseForProgram")
-    public String displayCourseForProgram(@ModelAttribute("programAndYear") ProgramAndYearForm programAndYear, BindingResult p, Model m) {
+    public String displayCourseForProgram(@SessionAttribute("user") User user, @ModelAttribute("programAndYear") ProgramAndYearForm programAndYear, BindingResult p, Model m) {
         List<Course> courses;
         List<Course> courses2;
         List<Course> finalizedList = new ArrayList<>();
@@ -67,13 +67,14 @@ public class ProgramController {
                 finalizedList.add(courses.get(i));
             }
         }
+        m.addAttribute("user", user);
         m.addAttribute("courses",finalizedList);
         m.addAttribute("course", new Course());
         return "displayCourseForProgram";
     }
 
     @PostMapping("/displayLearningOutcomesForProgram")
-    public String displayLearningOutcomesForProgram(@ModelAttribute("programAndYear") ProgramAndYearForm programAndYear, BindingResult p, Model m) {
+    public String displayLearningOutcomesForProgram(@SessionAttribute("user") User user, @ModelAttribute("programAndYear") ProgramAndYearForm programAndYear, BindingResult p, Model m) {
         List<Course> courses;
         List<Course> courses2;
         List<Course> finalizedListofCourses = new ArrayList<>();
@@ -100,6 +101,7 @@ public class ProgramController {
             }
         }
 
+        m.addAttribute("user", user);
         m.addAttribute("learningOutcomes", finalizedListoflearningOutcomes);
         m.addAttribute("learningOutcome", new LearningOutcome());
         return "displayLearningOutcomesForProgram";
