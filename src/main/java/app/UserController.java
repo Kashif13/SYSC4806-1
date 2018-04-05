@@ -42,9 +42,9 @@ public class UserController {
                 return "index";
             }
         } catch (Exception e) {
-            return "error";
+            return "loginError";
         }
-        return "error";
+        return "loginError";
     }
 }
 
