@@ -47,4 +47,20 @@ public class CategoryController {
         model.addAttribute("newCategory", c);
         return "listCategories";
     }
+
+    @GetMapping("/editCategory/{categoryId}")
+    public String editCategory(@PathVariable Long categoryId, Model model){
+        Category category = categoryRepo.findById(categoryId);
+        model.addAttribute("category", category);
+        return "editCategoryForm";
+    }
+
+    @PostMapping("/updateCategory/{categoryId}")
+    public String updateProgram(@PathVariable Long categoryId, @ModelAttribute("category") Category category, Model model) {
+        category.setId(categoryId);
+        Category updatedCategory = categoryRepo.save(category);
+        model.addAttribute("categories", categoryRepo.findAll());
+        model.addAttribute("updatedCategory", updatedCategory);
+        return "listCategories";
+    }
 }

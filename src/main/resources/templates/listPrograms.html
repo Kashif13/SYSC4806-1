@@ -19,8 +19,8 @@
         <div class="card">
             <div class="card-block">
                 <a class="btn btn-warning btn-sm" th:href="@{/editProgram/{id}(id=${program.id})}">Edit</a>
-                <span class="alert" th:if="${(newProgram != null) and (program.id == newProgram.id)}">*Newly Added*</span>
-                <span class="alert" th:if="${(updatedProgram != null) and (program.id == updatedProgram.id)}">*Updated*</span>
+                <span class="alert" th:if="${(newProgram != null) and (program.id == newProgram.id)}">*Newly Added Program*</span>
+                <span class="alert" th:if="${(updatedProgram != null) and (program.id == updatedProgram.id)}">*Updated Program*</span>
                 <h4 class="card-title" th:text="${program.name}">1</h4>
                 <p>Description: </p><p class="card-text" th:text="${program.description}">Title ...</p>
                 <br/>
@@ -28,7 +28,10 @@
         </div>
     </tr>
     <br/>
-    <a class="btn btn-warning"  href='/newProgram'>Add a new program</a>
+    <p>
+        <a class="btn btn-warning"  href='/newProgram'>Add a new program</a>
+        <input class="btn btn-warning" type="button"  onclick="location.href='/home'" value="Home" />
+    </p>
 </div>
 </body>
 
