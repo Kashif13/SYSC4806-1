@@ -173,8 +173,8 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | L |
 | Details | The user should be able to export whatever list he is currently viewing as a CSV file which he/she can read later to remember the results |
 |Acceptance Criteria | Have button on all pages to have displayed list exported as CSV |
-| Assigned to | - |
-| Start Date | - |
+| Assigned to | Sheikh Faisal Anwar |
+| Start Date | (Tuesday) 27th March, 2018 |
 | End Date | - |
 
 ---
