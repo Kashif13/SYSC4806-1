@@ -8,7 +8,7 @@ body{
     padding: 1em;
 }
 
-h1, h2, h3, h4, p, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{
+h1, h2, h3, h4, p, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a, span.alert {
      color: whitesmoke;
 }
 
