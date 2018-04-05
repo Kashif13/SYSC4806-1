@@ -12,5 +12,5 @@ public interface ProgramRepository extends CrudRepository<Program, Long> {
 
     List<Program> findAll();
     List<Program> findByName(String name);
-    List<Program> findById(Long id);
+    Program findById(Long id);
 }
