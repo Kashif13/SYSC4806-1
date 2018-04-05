@@ -27,6 +27,15 @@
                 </option>
             </select>
             </p>
+
+            <p>Program:
+                <select class="form-control" th:field="*{program}">
+                    <option th:each="program : ${programs}"
+                            th:value="${program.getName()}" th:text="${program.name}">
+                    </option>
+                </select>
+            </p>
+
             <br/>
             <p>
                 <input class="btn btn-warning" id="submit" type="submit" value="Submit"/>

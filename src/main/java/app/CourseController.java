@@ -20,6 +20,8 @@ public class CourseController {
     private LearningOutcomeRepository loRepo;
     @Autowired
     private CategoryRepository categoryRepo;
+    @Autowired
+    private ProgramRepository programRepo;
 
 
 
@@ -55,6 +57,7 @@ public class CourseController {
         }
         Course course = new Course();
 
+        model.addAttribute("programs", programRepo.findAll());
         model.addAttribute("courseAndYear", new CourseAndYearForm());
         model.addAttribute("course", course);
         model.addAttribute("years", years);
@@ -69,8 +72,12 @@ public class CourseController {
                 year = AcademicYear.values()[i];
             }
         }
-        Course currentCourse = course.getCourse();
-        currentCourse.setYear(year);
+        Course currentCourse = new Course(course.getCourse().getName(), course.getCourse().getDescription(), year);
+
+        for(Program p : programRepo.findByName(course.getProgram().toString())){
+            p.addCourse(currentCourse);
+            currentCourse.addProgram(p);
+        }
 
         Course c = courseRepo.save(currentCourse);
         model.addAttribute("courses", courseRepo.findAll());
