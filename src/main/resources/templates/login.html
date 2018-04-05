@@ -17,15 +17,17 @@
             Learning Outcomes Manager
         </div>
     </nav>
-    <form  id="loginForm"  action="#" th:action="@{/login}" th:object="${user}" method="post">
-        <p>Username: <input id="username" type="text" th:field="*{username}" /></p>
-        <p>Password: <input id="password" type="text" th:field="*{password}" /></p>
-        <p><input id="submit" type="submit" value="Login"/></p>
-    </form>
+    <div class="login">
+        <h1>Welcome !</h1>
+        <form  id="loginForm"  action="#" th:action="@{/login}" th:object="${user}" method="post">
+            <input name="u" placeholder="Username" required="required" id="username" type="text" th:field="*{username}" />
+            <input name="p" placeholder="Password" required="required" id="password" type="text" th:field="*{password}" />
+            <button id="submit" class="btn btn-warning" type="submit">Login</button>
+        </form>
+    </div>
+
 
 </div>
-
-
 
 </body>
 
