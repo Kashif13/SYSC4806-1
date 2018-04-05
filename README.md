@@ -232,7 +232,10 @@ We will also setup and maintain UML diagrams.
   - Complete incomplete functionalities + add more tests
   
 ## Final Scope:
-  -
+  - A User is able to track Learning Outcomes, through various relationships it holds, while an Admin is able to edit them, as well the relationships.
+  - Each course has a set of learning objectives in a given year (these may be changed on a year-by-year basis).
+Each learning objective belongs to a Category. There's a limited list of Categories which can be edited by the Administrator (such as "Design", "Communication Skills"). A course belongs to one or many programs, and a program has many courses (in a given year). A course is taught in a given "year" (1st, 2nd etc., not school year)
+- As mentioned in Additional details, Story Number 8 (export as CSV) was too large and the feature was not completed in the alloted timeframe due to time constraints
   
 ## Additional Details:
   - Story Number 8 - [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) was not completed due to time constraints (used in research and development both), lack of knowledge in area as well priority of the story being low.
