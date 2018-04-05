@@ -19,6 +19,7 @@
             <tr th:each="learningOutcome : ${learningOutcomes}">
                 <div class="card">
                     <div class="card-block">
+                        <p th:if="${(newLearningOutcome != null) and (learningOutcome.id == newLearningOutcome.id)}">*Newly Added Learning Outcome*</p>
                         <h4 class="card-title" th:text="${learningOutcome.name}">1</h4>
                         <p>Description: </p><p class="card-text" th:text="${learningOutcome.description}">Title ...</p>
                         <br/>
@@ -26,8 +27,11 @@
                 </div>
             </tr>
             <br/>
-        <div id="user" th:text="${user.username}" class="hidden"></div>
-    <input id="addLo" class="btn btn-warning" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+
+      <div id="user" th:text="${user.username}" class="hidden"></div>
+      <p>
+          <input id="addLo" class="btn btn-warning" type="button"  onclick="location.href='/addLearningOutcome'" value="Add a new learning outcome" />
+      </p>
     </div>
 </body>
 
