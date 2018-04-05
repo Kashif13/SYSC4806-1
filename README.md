@@ -105,27 +105,17 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Create form and follow up 'success!' page. |
 | Assigned to | Muhammad Siddiqui |
 | Start Date | (Monday) 2nd April, 2018 |
-| End Date | - |
+| End Date | (Tuesday) 3rh April, 2018 |
 
-| Story | [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) |
-| ------ | ------ |
-| Story Number | 8 |
-| Size Estimate | M |
-| Details | - |
-|Acceptance Criteria | - |
-| Assigned to | - |
-| Start Date | - |
-| End Date | - |
-
-| Story | [As an administrator, I should be able to edits the lists, so that the lists are always up to date ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7949973) |
+| Epic | [As an administrator, I should be able to edits the lists, so that the lists are always up to date ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7949973) |
 | ------ | ------ |
 | Story Number | 9 |
 | Size Estimate | M |
-| Details | - |
-|Acceptance Criteria | - |
-| Assigned to |  |
-| Start Date | - |
-| End Date | - |
+| Details | All the lists (Categories, Programs, Courses, Learning Outcomes) should have the ability to have elements added to them, and the ones present should be editable |
+|Acceptance Criteria | Edit buttons present on all list displaying pages, along with an add button for the corresponding list |
+| Assigned to | Epic broken down into stories and assigned to Team Members |
+| Start Date | (Wednesday) 28th March, 2018 |
+| End Date | (Tuesday) 3rd April, 2018 |
 
 | Story | [As a user, I should be able to login to the app, so that I can display different lists of information related to the department ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7842757) |
 | ------ | ------ |
@@ -135,7 +125,7 @@ Represent the structure of a Department, and be able to track, edit and update t
 |Acceptance Criteria | Setup travis, heroku. Add class and entity relations for users and user roles. Have login page (needed for admin vs user), ability to register. View top level of department after logging in |
 | Assigned to | Sheikh Faisal Anwar |
 | Start Date | (Sunday) 4th March, 2018 |
-| End Date | - |
+| End Date | (Tuesday) 3rd April, 2018 |
 
 | Story | [As an Admin I should be able to edit information about a particular a Program.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674011) |
 | ------ | ------ |
@@ -143,9 +133,9 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | S |
 | Details | The Administrator should be able to access a form where she can edit details about an existing Program's name and description. |
 |Acceptance Criteria | Create form that allows each field to be edited. Clicking submit updates the edited information and displays the list of all programs, with the updated program marked 'Updated'. |
-| Assigned to | Himanish |
+| Assigned to | Himanish Kaushal |
 | Start Date | (Monday) 3rd April, 2018 |
-| End Date | - |
+| End Date | (Tuesday) 4th April, 2018 |
 
 | Story | [As an Admin I should be able to edit a particular a particular Course, including the Program(s) and Academic Year it belongs to.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674012) |
 | ------ | ------ |
@@ -153,9 +143,9 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | S |
 | Details | The Administrator should be able to access a form where she can edit details about an existing Course's name, description, academic year and programs. |
 |Acceptance Criteria | Create form that allows each field to be edited. Clicking submit updates the edited information and displays the list of all courses, with the updated course marked 'Updated'. |
-| Assigned to | - |
-| Start Date | - |
-| End Date | - |
+| Assigned to | Muhammad Siddiqui |
+| Start Date | (Wednesday) 28th March, 2018 |
+| End Date | (Monday) 3rd April, 2018 |
 
 | Story | [As an Admin I should be able to edit information about a particular a Category.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674008) |
 | ------ | ------ |
@@ -163,9 +153,9 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | S |
 | Details | The Administrator should be able to access a form where she can edit details about an existing Category's name and description. |
 |Acceptance Criteria | Create form that allows each field to be edited. Clicking submit updates the edited information and displays the list of all categories, with the updated category marked 'Updated'. |
-| Assigned to | - |
-| Start Date | - |
-| End Date | - |
+| Assigned to | Muhammad Siddiqui |
+| Start Date | (Monday) 3rd April, 2018 |
+| End Date | (Tuesday) 4th April, 2018 |
 
 | Story | [As an Admin I should be able to edit information about a particular a Learning Outcome, including the Course and Category it belongs to.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674009) |
 | ------ | ------ |
@@ -173,6 +163,16 @@ Represent the structure of a Department, and be able to track, edit and update t
 | Size Estimate | S |
 | Details | The Administrator should be able to access a form where she can edit details about an existing Learning Outcome's name, description, and course and category it belongs to. |
 |Acceptance Criteria | Create form that allows each field to be edited. Clicking submit updates the edited information and displays the list of all learning outcomes, with the updated learning outcome marked 'Updated'. |
+| Assigned to | Himanish Kaushal |
+| Start Date | (Monday) 3rd April, 2018 |
+| End Date | (Tuesday) 4th April, 2018 |
+
+| Story | [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) |
+| ------ | ------ |
+| Story Number | 8 |
+| Size Estimate | L |
+| Details | The user should be able to export whatever list he is currently viewing as a CSV file which he/she can read later to remember the results |
+|Acceptance Criteria | Have button on all pages to have displayed list exported as CSV |
 | Assigned to | - |
 | Start Date | - |
 | End Date | - |
@@ -231,9 +231,23 @@ We will also setup and maintain UML diagrams.
   - Improve UI
   - Complete incomplete functionalities + add more tests
   
+## Final Scope:
+  -
+  
+## Additional Details:
+  - Story Number 8 - [As a user, I should be able to export the created list as a result in a CSV file, so that it is easy to read the results ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7841371) was not completed due to time constraints (used in research and development both), lack of knowledge in area as well priority of the story being low.
+  
 **Stories worked on:**
+  - Story Number 1 - [As a user, I should be able to login to the app, so that I can display different lists of information related to the department ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/2#card-7842757)
+  - Story Number 11 - [As an Admin, I should be able to add a new Course with a specific name, description and academic year, so that I can link specific Learning Outcomes associated with it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360554)
+  - Story Number 12 - [As an Admin, I should be able to add a new Program with a specific name and description, so that I can add related Courses to it.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-8360555)
+  - Story Number 13 - [As an Admin I should be able to edit information about a particular a Program.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674011)
+  - Story Number 14 - [As an Admin I should be able to edit a particular a particular Course, including the Program(s) and Academic Year it belongs to.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674012)
+  - Story Number 15 - [As an Admin I should be able to edit information about a particular a Category.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674008)
+  - Story Number 16 - [As an Admin I should be able to edit information about a particular a Learning Outcome, including the Course and Category it belongs to.](https://github.com/sheikhfaisalanwar/SYSC4806/projects/4#card-8674009)
   
-  
+**Epic worked on:**
+  - Story Number 9 - [As an administrator, I should be able to edits the lists, so that the lists are always up to date ](https://github.com/sheikhfaisalanwar/SYSC4806/projects/1#card-7949973)
   
 ---
 ## Setup instructions
