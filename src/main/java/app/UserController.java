@@ -23,6 +23,11 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value = "/home", method= RequestMethod.GET)
+    public String HomePage(ModelMap model){
+        return "index";
+    }
+
     @RequestMapping(value="/login", method=RequestMethod.GET)
     public String Login(ModelMap model){
         return "login";

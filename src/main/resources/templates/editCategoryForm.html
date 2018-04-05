@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Edit Program</title>
+    <title>Edit Category</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -13,14 +13,15 @@
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
         <div class="page-header">
-            <h3> Update Program:</h3>
+            <h3> Update Category:</h3>
         </div>
-        <form class="form" id="programForm"  action="#" th:action="@{/updateProgram/{id}(id=${program.id.toString()})}" th:object="${program}" th:method="POST">
+        <form class="form" id="categoryForm"  action="#" th:action="@{/updateCategory/{id}(id=${category.id.toString()})}" th:object="${category}" th:method="POST">
             <p class="form-group"><label>Name: </label><input class="form-control" id="name" type="text" th:field="*{name}" /></p>
             <p class="form-group"><label>Description: </label><input class="form-control" id="description" type="text" th:field="*{description}" /></p>
             <p>
                 <input class="btn btn-warning" id="submit" type="submit" value="Submit"/>
-                <input class="btn btn-warning" type="button"  onclick="location.href='/listPrograms'" value="View All Programs" />
+                <input class="btn btn-warning" type="reset" value="Reset" />
+                <input class="btn btn-warning" type="button"  onclick="location.href='/listCategories'" value="View All Categories" />
                 <input class="btn btn-warning" type="button"  onclick="location.href='/home'" value="Home" />
             </p>
         </form>
