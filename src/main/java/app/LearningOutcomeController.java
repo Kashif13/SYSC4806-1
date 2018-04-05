@@ -70,7 +70,7 @@ public class LearningOutcomeController {
     }
 
     @PostMapping("/addLearningOutcome")
-    public String learningOutcomeSubmit(@ModelAttribute("learningOutcomeForm") LearningOutcomeForm learningOutcomeForm, Model model) {
+    public String learningOutcomeSubmit(@SessionAttribute("user") User user, @ModelAttribute("learningOutcomeForm") LearningOutcomeForm learningOutcomeForm, Model model) {
 
         LearningOutcome lo = learningOutcomeForm.getLearningOutcome();
         lo.setCourse(learningOutcomeForm.getCourse());
@@ -82,6 +82,7 @@ public class LearningOutcomeController {
 
         model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
         model.addAttribute("newLearningOutcome", newLearningOutcome);
+        model.addAttribute("user", user);
 
         return "listLearningOutcomes";
     }
@@ -112,7 +113,7 @@ public class LearningOutcomeController {
     }
 
     @PostMapping("/updateLearningOutcome/{id}")
-    public String updateLearningOutcome(@PathVariable Long id, @ModelAttribute("learningOutcomeForm") LearningOutcomeForm learningOutcomeForm, Model model) {
+    public String updateLearningOutcome(@SessionAttribute("user") User user, @PathVariable Long id, @ModelAttribute("learningOutcomeForm") LearningOutcomeForm learningOutcomeForm, Model model) {
         LearningOutcome learningOutcomeFromForm = learningOutcomeForm.getLearningOutcome();
         learningOutcomeFromForm.setId(id);
         learningOutcomeFromForm.setCourse(learningOutcomeForm.getCourse());
@@ -145,6 +146,7 @@ public class LearningOutcomeController {
 
         model.addAttribute("learningOutcomes", learningOutcomeRepo.findAll());
         model.addAttribute("updatedLearningOutcome", updatedLearningOutcome);
+        model.addAttribute("user", user);
 
         return "listLearningOutcomes";
     }
