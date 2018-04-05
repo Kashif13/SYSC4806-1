@@ -23,3 +23,18 @@ h1, h2, h3, h4, p, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li
     color: #F7CA18;
 }
 
+#username, #password, #submit{
+    display: block;
+}
+
+#username, #password{
+    margin: 2em 0;
+    width: 50%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
