@@ -94,4 +94,10 @@ public class HttpRequestTest {
                 String.class)).contains("Courses");
     }
 
+    @Test
+    public void editLearningOutcomeShouldReturnForm() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/editLearningOutcome/1",
+                String.class)).contains("Update Learning Outcome:");
+    }
+
 }
